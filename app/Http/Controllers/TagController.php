@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Tag;
 use Illuminate\Http\Request;
 
-class PostController extends Controller
+class TagController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::paginate(2);
-        return view('posts.index',compact('posts'));
+        $tags = Tag::all();
+        return view('tags.index',compact('tags'));
     }
 
     /**
@@ -25,7 +26,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        return view('tags.create');
     }
 
     /**
@@ -38,65 +39,63 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $this->validate(request(),[
-            'title'=>'required',
+            'name'=>'required',
             'description' => 'required'
 
         ]);
 
-        auth()->user()->publish(
-            new Post(request(['title','description']))
+        auth()->user()->create_Tag(
+            new Tag(request(['name','description']))
         );
 
         return redirect('/');
-
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Post  $post
+     * @param  \App\Tag  $tag
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show(Tag $tag)
     {
-        return view('posts.show',compact('post'));
+        $posts=$tag->posts;
+//        dd($posts);
+        return view('tags.show',compact('posts'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Post  $post
+     * @param  \App\Tag  $tag
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit(Tag $tag)
     {
-        return view('posts.edit',compact('post'));
+        return view('tags.edit',compact('tag'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Post  $post
+     * @param  \App\Tag  $tag
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, Tag $tag)
     {
-        $post->update(request(['title','description']));
-        return redirect('/posts');
-
+        $tag->update(request(['name','description']));
+        return redirect('/tags');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Post $post
+     * @param  \App\Tag  $tag
      * @return \Illuminate\Http\Response
-     * @throws \Exception
      */
-    public function destroy(Post $post)
+    public function destroy(Tag $tag)
     {
-        $post->delete();
-        return redirect('/posts');
+        //
     }
 }

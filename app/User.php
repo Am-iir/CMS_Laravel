@@ -41,7 +41,15 @@ class User extends Authenticatable
         return $this->hasMany(Post::class);
     }
 
+    public function tags(){
+        return $this->hasMany(Tag::class);
+    }
+
     public function publish(Post $post){
         $this->posts()->save($post);
+    }
+
+    public function create_Tag(Tag $tag){
+        $this->tags()->save($tag);
     }
 }
