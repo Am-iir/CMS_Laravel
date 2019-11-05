@@ -16,6 +16,22 @@
         </div>
 
         <div class="form-group">
+            <label class="control-label" for="tag_id">Choose your tags</label>
+
+            <select name="tag_id[]" class="form-control" multiple="multiple">
+                @foreach($post->tags as $ptag)
+                @foreach($tags as $tag)
+                    <option value="{{$tag->id}}"
+                    @if($ptag->id == $tag->id)
+                        selected
+                        @endif
+                    >{{$tag->name}}</option>
+                @endforeach
+                @endforeach
+            </select>
+        </div>
+
+        <div class="form-group">
             <input type="submit" class="btn btn-primary"  value="Update">
         </div>
 

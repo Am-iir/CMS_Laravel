@@ -3,10 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Tag;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index', 'show']);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,8 +21,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::paginate(2);
-        return view('posts.index',compact('posts'));
+        $posts = Post::paginate(5);
+        return view('posts.index', compact('posts'));
     }
 
     /**
@@ -25,7 +32,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        $tags = Tag::all();
+        return view('posts.create', compact('tags'));
     }
 
     /**
@@ -37,15 +45,18 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate(request(),[
-            'title'=>'required',
+        $this->validate(request(), [
+            'title' => 'required',
             'description' => 'required'
 
         ]);
+//        dd($request->all());
 
-        auth()->user()->publish(
-            new Post(request(['title','description']))
+        $post = auth()->user()->publish(
+            new Post(request(['title', 'description']))
         );
+
+        $post->tags()->attach(request('tag_id'));
 
         return redirect('/');
 
@@ -54,35 +65,39 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Post  $post
+     * @param \App\Post $post
      * @return \Illuminate\Http\Response
      */
     public function show(Post $post)
     {
-        return view('posts.show',compact('post'));
+        return view('posts.show', compact('post'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Post  $post
+     * @param \App\Post $post
      * @return \Illuminate\Http\Response
      */
     public function edit(Post $post)
     {
-        return view('posts.edit',compact('post'));
+        abort_if($post->user_id !== auth()->id(), 403);
+        $tags = Tag::all();
+        return view('posts.edit', compact('post','tags'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Post  $post
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Post $post
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Post $post)
     {
-        $post->update(request(['title','description']));
+        $post->update(request(['title', 'description']));
+        $post->tags()->sync(request('tag_id'));
+//        $post->tags()->attach(request('tag_id'));
         return redirect('/posts');
 
     }
@@ -96,6 +111,7 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
+        abort_if($post->user_id !== auth()->id(), 403);
         $post->delete();
         return redirect('/posts');
     }

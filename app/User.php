@@ -47,6 +47,7 @@ class User extends Authenticatable
 
     public function publish(Post $post){
         $this->posts()->save($post);
+        return $post;
     }
 
     public function create_Tag(Tag $tag){
