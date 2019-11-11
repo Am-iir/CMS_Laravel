@@ -1,12 +1,12 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
-    <div class="container">
+
         @if(count($tags)>0)
             @foreach($tags as $tag)
 
                 <h2 >
-                    <a href="/tags/{{$tag->id}}">
+                    <a href="/tags/{{$tag->name}}">
                         {{$tag->name}}
                     </a>
                 </h2>
@@ -18,6 +18,6 @@
             <p> No tags found</p>
         @endif
 
-    </div>
+
 
 @endsection

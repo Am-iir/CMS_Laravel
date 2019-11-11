@@ -13,7 +13,7 @@
                 <p class="blog-post-meta">
 
                     {{$post->created_at->toFormattedDateString()}}</p>
-                {{$post->description}}
+                {!!$post->description  !!}
             @endforeach
             {{$posts->links()}}
         @else

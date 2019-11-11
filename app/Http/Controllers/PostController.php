@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Post;
 use App\Tag;
 use Illuminate\Http\Request;
@@ -33,7 +34,11 @@ class PostController extends Controller
     public function create()
     {
         $tags = Tag::all();
-        return view('posts.create', compact('tags'));
+
+        $categories = Category::with('childrenRecursive')->whereNull('parent_id')->get()->toArray();
+// dd($categories);
+
+        return view('posts.create', compact('tags','categories'));
     }
 
     /**
@@ -45,18 +50,19 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate(request(), [
+        $this->validate($request, [
             'title' => 'required',
             'description' => 'required'
 
         ]);
-//        dd($request->all());
+//       dd($request->all());
 
         $post = auth()->user()->publish(
             new Post(request(['title', 'description']))
         );
 
         $post->tags()->attach(request('tag_id'));
+        $post->categories()->attach(request('category_id'));
 
         return redirect('/');
 
@@ -83,7 +89,9 @@ class PostController extends Controller
     {
         abort_if($post->user_id !== auth()->id(), 403);
         $tags = Tag::all();
-        return view('posts.edit', compact('post','tags'));
+        $categories = Category::with('childrenRecursive')->whereNull('parent_id')->get()->toArray();
+
+        return view('posts.edit', compact('post','tags','categories'));
     }
 
     /**
@@ -97,7 +105,8 @@ class PostController extends Controller
     {
         $post->update(request(['title', 'description']));
         $post->tags()->sync(request('tag_id'));
-//        $post->tags()->attach(request('tag_id'));
+        $post->categories()->sync(request('category_id'));
+
         return redirect('/posts');
 
     }

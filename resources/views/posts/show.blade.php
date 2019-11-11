@@ -1,9 +1,21 @@
 @extends('layouts.master')
 
 @section('content')
+
 <h1> {{ $post->title }}</h1>
 <hr>
-    {{$post->description}}
+@if(count($post->tags))
+    <ul>
+        @foreach($post->tags as $tag)
+            <li>
+                <a href="/tags/{{$tag->name}}">
+                    {{ $tag->name }}
+                </a>
+            </li>
+        @endforeach
+    </ul>
+@endif
+    {!!  $post->description !!}
 
 <form action="/posts/{{$post->id}}/edit">
     <input type="submit" value="Edit">
@@ -18,4 +30,5 @@
             <input type="submit" value="Delete">
         </div>
     </form>
+
 @endsection

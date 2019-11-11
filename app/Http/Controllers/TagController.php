@@ -27,6 +27,7 @@ class TagController extends Controller
     public function create()
     {
         return view('tags.create');
+
     }
 
     /**
@@ -40,7 +41,6 @@ class TagController extends Controller
     {
         $this->validate(request(),[
             'name'=>'required',
-            'description' => 'required'
 
         ]);
 

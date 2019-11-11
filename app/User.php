@@ -45,6 +45,10 @@ class User extends Authenticatable
         return $this->hasMany(Tag::class);
     }
 
+    public function categories(){
+        return $this->hasMany(Category::class);
+    }
+
     public function publish(Post $post){
         $this->posts()->save($post);
         return $post;
@@ -52,5 +56,13 @@ class User extends Authenticatable
 
     public function create_Tag(Tag $tag){
         $this->tags()->save($tag);
+    }
+
+    public function create_Media(Media $media){
+        $this->tags()->save($media);
+    }
+
+    public function create_Category(Category $category){
+        $this->categories()->save($category);
     }
 }

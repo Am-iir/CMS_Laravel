@@ -17,7 +17,7 @@ class CreateTagsTable extends Migration
             $table->increments('id');
             $table->string('name')->unique();
             $table->integer('user_id');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }
