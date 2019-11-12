@@ -48,7 +48,7 @@ class TagController extends Controller
             new Tag(request(['name','description']))
         );
 
-        return redirect('/');
+        return redirect('/tags');
     }
 
     /**

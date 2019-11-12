@@ -46,19 +46,14 @@ class CategoryController extends Controller
             'description' => 'required'
 
         ]);
-//      dd($request->all());
 
 //        auth()->user()->create_Category(
 //            new Category(request(['name', 'slug', 'description','parent_id']))
 //        );
-        $converted = Str::kebab('fooBar');
-
-        dd($converted);
 
         $category = new Category();
-        $category->name = request('name');
-        $slug = request('slug');
-
+        $category->name =request('name');
+        $category->slug =  Str::kebab(request('slug'));
         $category->description = request('description');
         $category->parent_id = request('parent_id');
         $category->user_id = auth()->id();

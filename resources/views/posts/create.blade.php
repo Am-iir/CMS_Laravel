@@ -15,9 +15,9 @@
                               placeholder="Enter description about your post"></textarea>
                 </div>
 
-                <div class="form-group">
-                    <input type="file">
-
+                <div class="form-group" id="addFeatureImage">
+                    <button  class="btn btn-primary btn-sm" id="featureImage"> + Add Featured Image</button>
+                    <input type="hidden" name="media_id" class="postMediaName" value="">
                 </div>
 
                 <div class="form-group">
@@ -75,6 +75,8 @@
                 @include('layouts.errors')
 
             </form>
+
+    @include('posts.addmedia')
 
 
 @endsection

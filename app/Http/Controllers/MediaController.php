@@ -112,10 +112,6 @@ class MediaController extends Controller
             $fileNameToStore = $filename.'_'.time().'.'.$extension;
             $path = $request->file('cover_image')->storeAs('public/cover_images',$fileNameToStore);
 
-        }
-
-        if ($request->hasFile('cover_image')) {
-
             $medium->update(['alt'=> request('alt'), 'cover_image' =>$fileNameToStore ]);
 
         }

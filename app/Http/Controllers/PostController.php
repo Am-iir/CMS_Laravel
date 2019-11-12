@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Media;
 use App\Post;
 use App\Tag;
 use Illuminate\Http\Request;
@@ -34,11 +35,10 @@ class PostController extends Controller
     public function create()
     {
         $tags = Tag::all();
-
         $categories = Category::with('childrenRecursive')->whereNull('parent_id')->get()->toArray();
-// dd($categories);
+        $media = Media::orderBy('created_at','desc')->paginate(3);
 
-        return view('posts.create', compact('tags','categories'));
+        return view('posts.create', compact('tags','categories','media'));
     }
 
     /**
@@ -50,6 +50,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+
         $this->validate($request, [
             'title' => 'required',
             'description' => 'required'
@@ -61,8 +62,10 @@ class PostController extends Controller
             new Post(request(['title', 'description']))
         );
 
+
         $post->tags()->attach(request('tag_id'));
         $post->categories()->attach(request('category_id'));
+        $post->media()->attach(request('media_id'));
 
         return redirect('/');
 

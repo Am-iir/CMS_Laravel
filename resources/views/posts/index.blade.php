@@ -5,15 +5,29 @@
         @if(count($posts)>0)
             @foreach($posts as $post)
 
-                <h2 class="blog-post-title">
-                    <a href="/posts/{{$post->id}}">
-                        {{$post->title}}
-                    </a>
-                </h2>
-                <p class="blog-post-meta">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="blog-post-title">
+                            <a href="/posts/{{$post->id}}">
+                                {{$post->title}}
+                            </a>
+                        </h3>
 
-                    {{$post->created_at->toFormattedDateString()}}</p>
-                {!!$post->description  !!}
+                    </div>
+
+                    <div class="card-body">
+                        <p class="blog-post-meta">
+
+                            {{$post->created_at->toFormattedDateString()}}</p>
+                        {!!$post->description  !!}
+
+                    </div>
+
+                </div>
+
+                <br>
+
+
             @endforeach
             {{$posts->links()}}
         @else
@@ -23,3 +37,6 @@
     </div>
 
 @endsection
+
+
+

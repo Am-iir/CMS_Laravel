@@ -19,6 +19,7 @@
 
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+{{--    <link href="{{ asset('css/mystyle.css') }}" rel="stylesheet">--}}
     <link href="{{ asset('css/sidebar.css') }}" rel="stylesheet">
 
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
@@ -28,9 +29,13 @@
 </head>
 <body>
 <div class="container">
-    @include('layouts.sidebar')
     <div class="row">
-        <div class="col-md-11 offset-1">
+        <div class="col-md-1 ">
+
+    @include('layouts.sidebar')
+        </div>
+
+        <div class="col-md-11 ">
 
             @yield('content')
         </div>

@@ -1,4 +1,3 @@
-
 $("#library").on('click','img',function (e) {
     let $image = $(e.target);
     let image = $image.attr('src');
@@ -6,9 +5,8 @@ $("#library").on('click','img',function (e) {
     let image_id = $image.parent().find("input[name=image_id]").val();
     $('#updateModal').on('show.bs.modal', function () {
         $(".img-responsive").attr("src", image);
-        $("input[name=image_alt]").attr("value",alt);
-        $("input[name=updateimage_id]").attr("value",image_id);
-
+        $("input[name=image_alt]").val(alt);
+        $("input[name=updateimage_id]").val(image_id);
     });
     e.preventDefault();
 });
@@ -18,7 +16,6 @@ $(document).on('click','#save_image',function (e) {
 
     let formData = new FormData();
     let imageData = $('input[name=newImage]')[0].files[0];
-
     formData.append('cover_image',imageData);
     formData.append('alt',$("input[name=image_alt]").val());
     formData.append('update_id',$("input[name=updateimage_id]").val());
@@ -29,7 +26,6 @@ $(document).on('click','#save_image',function (e) {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-
 
     $.ajax({
         method: "POST",
@@ -108,10 +104,37 @@ $('.newTag').on('click','#addTag',function (e) {
             }));
         },
     });
-
-
     e.preventDefault();
 });
+
+$('#featureImage').on('click',function (e) {
+    $('#mediaModal').modal('toggle');
+    e.preventDefault();
+});
+
+$('#postMedia').on('dblclick','img',function (e) {
+    let $img =$(e.target);
+
+
+    let mediaId = $img.parent().find("input[name=postMediaId]").val();
+    let alt = $img.attr('alt');
+
+    console.log(mediaId);
+
+    $('#mediaModal').modal('toggle');
+    $('.postMediaName').val(mediaId);
+    $('#addFeatureImage').append('<label>'+ alt +' has been selected</label>');
+    $("#featureImage").attr("disabled", true);
+
+
+});
+
+
+
+
+
+
+
 
 
 

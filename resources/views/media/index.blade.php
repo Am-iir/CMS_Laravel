@@ -5,32 +5,15 @@
         <hr>
         <div  class="col-md-6 offset-3">
 
-                <h3> Upload the Image</h3>
+            @include('media.create')
 
-        <form method="POST" action="/media" enctype="multipart/form-data">
-            {{csrf_field()}}
-
-            <div class="form-group">
-{{--                <label for="alt">Alt Text</label>--}}
-                <input type="text" class="form-control" id="title"  name="alt" placeholder="Enter Alternative text">
-            </div>
-
-            <div class="form-group">
-                <input type="file" name="cover_image">
-            </div>
-
-
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary">Publish</button>
-            </div>
-            @include('layouts.errors')
-
-        </form>
         </div>
     </div>
     <hr>
 
     <div class="row" id="library" >
+
+        @if(count($media)>0)
 
     @foreach($media as $med)
             <div  class="col-md-3 " id="image_{{$med->id}}">
@@ -38,8 +21,10 @@
                 <img src="/storage/cover_images/{{$med->cover_image}}"  data-toggle="modal" data-target="#updateModal" alt="{{$med->alt}}" height="200" width="200">
 
             </div>
-
     @endforeach
+        @else
+            <p> No Media found</p>
+        @endif
         @include('media.edit')
 
     </div>
