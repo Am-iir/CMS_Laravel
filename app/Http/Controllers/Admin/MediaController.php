@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Media;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
 
 
@@ -18,10 +19,10 @@ class MediaController extends Controller
      */
     public function index()
     {
-        $media = Media::orderBy('created_at','desc')->paginate(4);
+        $media = Media::orderBy('created_at', 'desc')->paginate(4);
 //        $medium =Media::find(8);
 
-        return view('admin.media.index',compact('media'));
+        return view('admin.media.index', compact('media'));
     }
 
     /**
@@ -29,7 +30,8 @@ class MediaController extends Controller
      *
      * @return Response
      */
-    public function create()    {
+    public function create()
+    {
 
         return view('admin.media.create');
     }
@@ -43,24 +45,31 @@ class MediaController extends Controller
      */
     public function store(Request $request)
     {
-
-        $this->validate($request,[
-            'cover_image' => 'image|required|max:1999'
+        $this->validate($request, [
+            'cover_image' => 'image|required|max:1999',
+            'alt' => 'required'
         ]);
 
-        if ($request->hasFile('cover_image')){
+        if ($request->hasFile('cover_image')) {
+
             $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
             //Get just filename
-            $filename = pathinfo($filenameWithExt,PATHINFO_FILENAME);
+            $filename = Str::random(16) . '_' . time();
             //Get just extension
             $extension = $request->file('cover_image')->getClientOriginalExtension();
             //Filename to store
-            $fileNameToStore = $filename.'_'.time().'.'.$extension;
-            $request->file('cover_image')->storeAs('public/cover_images',$fileNameToStore);
-            $thumbnailpath = public_path('storage/cover_images/thumbnail/'.$filename.'_thumbnail.'.$extension);
-            $img = Image::make($request->file('cover_image'))->resize(100, 100)->save($thumbnailpath);
+            $fileNameToStore = $filename . '.' . $extension;
 
+            $request->file('cover_image')
+                ->storeAs('public/cover_images', $fileNameToStore);
 
+            $thumbnailpath = 'cover_images/thumbnail/' . $filename . '_thumbnail.' . $extension;
+
+            $img = Image::make($request->file('cover_image'))
+                ->resize(100, 100);
+
+            \Storage::disk('public')
+                ->put($thumbnailpath, $img->encode($extension, 80));
 
         }
 
@@ -77,7 +86,7 @@ class MediaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Media  $media
+     * @param  \App\Media $media
      * @return Response
      */
     public function show(Media $media)
@@ -94,7 +103,7 @@ class MediaController extends Controller
     public function edit(Media $medium)
     {
 
-        return view('admin.media.edit',compact('medium'));
+        return view('admin.media.edit', compact('medium'));
     }
 
     /**
@@ -108,21 +117,19 @@ class MediaController extends Controller
     {
 //        dd(request()->all());
 
-        if ($request->hasFile('cover_image')){
+        if ($request->hasFile('cover_image')) {
             $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
             //Get just filename
-            $filename = pathinfo($filenameWithExt,PATHINFO_FILENAME);
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
             //Get just extension
             $extension = $request->file('cover_image')->getClientOriginalExtension();
             //Filename to store
-            $fileNameToStore = $filename.'_'.time().'.'.$extension;
-            $path = $request->file('cover_image')->storeAs('public/cover_images',$fileNameToStore);
+            $fileNameToStore = $filename . '_' . time() . '.' . $extension;
+            $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
 
-            $medium->update(['alt'=> request('alt'), 'cover_image' =>$fileNameToStore ]);
+            $medium->update(['alt' => request('alt'), 'cover_image' => $fileNameToStore]);
 
-        }
-
-        else{
+        } else {
 
             $medium->update(request(['alt']));
         }
@@ -140,7 +147,7 @@ class MediaController extends Controller
      */
     public function destroy(Media $medium)
     {
-        $medium ->delete();
+        $medium->delete();
         return response()->json($medium);
     }
 }
