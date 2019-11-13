@@ -1,9 +1,20 @@
 $("#library").on('click','img',function (e) {
     let $image = $(e.target);
     let image = $image.attr('src');
+    console.log(image);
     let alt = $image.attr('alt');
+    console.log(alt);
     let image_id = $image.parent().find("input[name=image_id]").val();
+    console.log(image_id);
+
+    $('#updateModal').modal();
+
+    $(".img-responsive").attr("src", image);
+    $("input[name=image_alt]").val(alt);
+    $("input[name=updateimage_id]").val(image_id);
+
     $('#updateModal').on('show.bs.modal', function () {
+        console.log(image);
         $(".img-responsive").attr("src", image);
         $("input[name=image_alt]").val(alt);
         $("input[name=updateimage_id]").val(image_id);
@@ -108,8 +119,8 @@ $('.newTag').on('click','#addTag',function (e) {
 });
 
 $('#featureImage').on('click',function (e) {
-    $('#mediaModal').modal('toggle');
     e.preventDefault();
+    $('#mediaModal').modal('toggle');
 });
 
 $('#postMedia').on('dblclick','img',function (e) {
