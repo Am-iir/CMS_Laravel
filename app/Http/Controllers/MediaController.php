@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Media;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Intervention\Image\Facades\Image;
+
 
 class MediaController extends Controller
 {
@@ -53,7 +55,11 @@ class MediaController extends Controller
             $extension = $request->file('cover_image')->getClientOriginalExtension();
             //Filename to store
             $fileNameToStore = $filename.'_'.time().'.'.$extension;
-            $path = $request->file('cover_image')->storeAs('public/cover_images',$fileNameToStore);
+            $request->file('cover_image')->storeAs('public/cover_images',$fileNameToStore);
+            $thumbnailpath = public_path('storage/cover_images/thumbnail/'.$filename.'_thumbnail.'.$extension);
+            $img = Image::make($request->file('cover_image'))->resize(100, 100)->save($thumbnailpath);
+
+
 
         }
 
