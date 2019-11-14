@@ -7,11 +7,6 @@ $("#library").on('click','img',function (e) {
     let image_id = $image.parent().find("input[name=image_id]").val();
     console.log(image_id);
 
-    $('#updateModal').modal();
-
-    $(".img-responsive").attr("src", image);
-    $("input[name=image_alt]").val(alt);
-    $("input[name=updateimage_id]").val(image_id);
 
     $('#updateModal').on('show.bs.modal', function () {
         console.log(image);
