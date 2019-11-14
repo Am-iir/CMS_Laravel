@@ -38,7 +38,7 @@ Route::middleware('auth')
                 Route::resource('tags','TagController');
                 Route::resource('category','CategoryController');
                 Route::resource('media','MediaController')->except('update');
-                Route::post('/media/{medium}','MediaController@update');
+                Route::post('/media/{medium}','MediaController@update')->name('media.update');
             });
     });
 

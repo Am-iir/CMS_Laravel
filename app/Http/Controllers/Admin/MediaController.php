@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Media;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
 
@@ -63,14 +64,20 @@ class MediaController extends Controller
             $request->file('cover_image')
                 ->storeAs('public/cover_images', $fileNameToStore);
 
-            $thumbnailpath = 'cover_images/thumbnail/' . $filename . '_thumbnail.' . $extension;
+            $sizes = config('images.size');
+            foreach ($sizes as $type => $size) {
+                [$width, $height] = $size;
+                $thumbnailpath = "cover_images/$type/{$filename}_{$type}.$extension";
 
-            $img = Image::make($request->file('cover_image'))
-                ->resize(100, 100);
+                $img = Image::make($request->file('cover_image'))
+                    ->resize($width, $height, function ($constraint) {
+                        $constraint->aspectRatio();
 
-            \Storage::disk('public')
-                ->put($thumbnailpath, $img->encode($extension, 80));
+                    });
 
+                Storage::disk('public')
+                    ->put($thumbnailpath, $img->encode($extension, 80));
+            }
         }
 
 //        dd($request->all());
@@ -86,7 +93,7 @@ class MediaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Media $media
+     * @param \App\Media $media
      * @return Response
      */
     public function show(Media $media)

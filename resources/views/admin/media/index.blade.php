@@ -19,6 +19,8 @@
                 <div class="col-md-3 " id="image_{{$med->id}}">
                     <input type="hidden" name="image_id" value="{{$med->id}}">
                     <img src="{{asset('/storage/cover_images/'.$med->cover_image)}}"
+                         data-id="{{$med->id}}"
+                         data-route="{{route('admin.media.destroy', $med->id)}}"
                          data-toggle="modal"
                          data-target="#updateModal"
                          alt="{{$med->alt}}"
