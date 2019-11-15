@@ -53,7 +53,11 @@ class PostController extends Controller
     {
         $this->validate($request, [
             'title' => 'required',
-            'description' => 'required'
+            'description' => 'required',
+            'media_id'=>'required',
+            'tag_id' => 'required',
+            'category_id' => 'required'
+
 
         ]);
 //       dd($request->all());
