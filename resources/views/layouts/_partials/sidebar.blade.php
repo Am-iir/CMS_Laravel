@@ -85,7 +85,7 @@
     <li class="nav-item {{navActive('admin.media')}}">
         <a class="nav-link {{isCollapsed('admin.media')}}" href="#" data-toggle="collapse" data-target="#collapseMedia"
            aria-expanded="true" aria-controls="collapseMedia">
-            <i class="fas fa-fw fa-wrench"></i>
+            <i class="fas fa-images"></i>
             <span>Media</span>
         </a>
         <div id="collapseMedia" class="collapse {{collapseShow('admin.media')}}" aria-labelledby="headingTwo"

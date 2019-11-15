@@ -15,22 +15,11 @@
             </div>
 
             <div class="form-group">
-                <label class="control-label" for="parent_id">Choose category</label>
-
-                <select name="parent_id" class="form-control" >
-                    <option  value="">None</option>
+                <label for="categories">Select Category</label>
+                <select id="categories" name="parent_id" multiple class="form-control select2">
                     @foreach($categories as $category)
-
-                        @if($category->parent_id !== Null )
-
-                            <option class="child" value="{{$category->id}}">{{$category->name}}</option>
-
-                        @else
-                            <option value="{{$category->id}}">{{$category->name}}</option>
-
-                        @endif
+                        @include('admin.posts._category', ['space' => 0])
                     @endforeach
-
                 </select>
             </div>
 
@@ -47,4 +36,21 @@
 
         </form>
     </div>
+@endsection
+
+@section('links')
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet"/>
+@endsection
+
+@section('script')
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
+
+    <script>
+        let $select2 = $('.select2');
+
+        $select2.select2({
+            placeholder: 'Select',
+            allowClear: true,
+        });
+    </script>
 @endsection

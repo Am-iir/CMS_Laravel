@@ -35,7 +35,8 @@ class PostController extends Controller
     public function create()
     {
         $tags = Tag::all();
-        $categories = Category::with('childrenRecursive')->whereNull('parent_id')->get()->toArray();
+        $categories = Category::all();
+//        $categories = Category::with('childrenRecursive')->whereNull('parent_id')->get()->toArray();
         $media = Media::orderBy('created_at','desc')->paginate(3);
 
         return view('admin.posts.create', compact('tags','categories','media'));

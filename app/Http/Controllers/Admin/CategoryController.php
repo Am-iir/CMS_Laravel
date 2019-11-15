@@ -52,6 +52,7 @@ class CategoryController extends Controller
 //            new Category(request(['name' ,'slug','description','parent_id']))
 //        );
 
+
         $category = new Category();
         $category->name =request('name');
         $category->slug =   SlugService::createSlug(Category::class, 'slug', request('slug'));

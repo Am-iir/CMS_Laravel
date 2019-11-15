@@ -29,7 +29,6 @@ Route::middleware('auth')
     ->group(function (){
         Route::get('admin','HomeController@index')->name('admin');
         Route::get('getSlug', function (Request $request) {
-//            dd($request->all());
             $slug = SlugService::createSlug(Category::class, 'slug', \request('slug_name'));
             return $slug;
         });

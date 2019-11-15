@@ -23,10 +23,13 @@
                 <div class="form-group">
                     <label class="control-label" for="tag_id">Choose your tags</label>
 
-                    <select name="tag_id[]" id="tag_list" class="form-control" multiple="multiple">
-                        @foreach($tags as $tag)
+                    <select name="tag_id[]" id="tag_list" class="form-control select2" multiple="multiple">
+                        @forelse($tags as $tag)
                             <option value="{{$tag->id}}">{{$tag->name}}</option>
-                        @endforeach
+                        @empty
+                            <option value="" disabled>No tags available</option>
+                        @endforelse
+
                     </select>
                 </div>
                 <div class="newTag">
@@ -35,39 +38,49 @@
                 </div>
                 <br>
 
-
                 <div class="form-group">
-                    <p> Choose your category</p>
-
-                    @foreach($categories as $category)
-                        <ul>
-                            <li>
-                                <input type="checkbox" value="{{$category['id']}}" name="category_id[]">
-                                <label for="category">{{$category['name']}}</label>
-
-                                @for($i=0 ; $i<count($category['children_recursive']);$i++)
-
-                                    @if(!empty($category['children_recursive']))
-                                        <ul>
-                                            <li>
-                                                <input type="checkbox"
-                                                       value="{{$category['children_recursive'][$i]['id']}}"
-                                                       name="category_id[]">
-                                                <label
-                                                    for="category">{{$category['children_recursive'][$i]['name']}}</label>
-                                                @include('layouts.categorydisplay')
-                                            </li>
-                                        </ul>
-
-                                    @endif
-                                @endfor
-
-                            </li>
-
-                        </ul>
-
-                    @endforeach
+                    <label for="categories">Select Category</label>
+                    <select id="categories" name="" multiple class="form-control select2">
+                        @foreach($categories as $category)
+                            @include('admin.posts._category', ['space' => 0])
+                        @endforeach
+                    </select>
                 </div>
+
+
+
+{{--                <div class="form-group">--}}
+{{--                    <p> Choose your category</p>--}}
+
+{{--                    @foreach($categories as $category)--}}
+{{--                        <ul>--}}
+{{--                            <li>--}}
+{{--                                <input type="checkbox" value="{{$category['id']}}" name="category_id[]">--}}
+{{--                                <label for="category">{{$category['name']}}</label>--}}
+
+{{--                                @for($i=0 ; $i<count($category['children_recursive']);$i++)--}}
+
+{{--                                    @if(!empty($category['children_recursive']))--}}
+{{--                                        <ul>--}}
+{{--                                            <li>--}}
+{{--                                                <input type="checkbox"--}}
+{{--                                                       value="{{$category['children_recursive'][$i]['id']}}"--}}
+{{--                                                       name="category_id[]">--}}
+{{--                                                <label--}}
+{{--                                                    for="category">{{$category['children_recursive'][$i]['name']}}</label>--}}
+{{--                                                @include('layouts.categorydisplay')--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
+
+{{--                                    @endif--}}
+{{--                                @endfor--}}
+
+{{--                            </li>--}}
+
+{{--                        </ul>--}}
+
+{{--                    @endforeach--}}
+{{--                </div>--}}
 
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Publish</button>
@@ -80,13 +93,30 @@
 
 @endsection
 
-@section('yield')
+@section('links')
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet"/>
+@endsection
+
+@section('script')
 
     <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
     <script>
         CKEDITOR.replace('article-ckeditor');
     </script>
 
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
+
+    <script>
+        let $select2 = $('.select2');
+
+        $select2.select2({
+            placeholder: 'Select',
+            allowClear: true,
+        });
+    </script>
+
 @endsection
+
+
 
 
