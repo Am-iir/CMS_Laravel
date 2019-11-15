@@ -123,20 +123,51 @@ $(document).ready(function () {
 
 
         let mediaId = $img.parent().find("input[name=postMediaId]").val();
-        let alt = $img.attr('alt');
-
-        console.log(mediaId);
+        let src = $img.attr('src');
 
         $('#mediaModal').modal('toggle');
         $('.postMediaName').val(mediaId);
-        $('#addFeatureImage').append('<label>' + alt + ' has been selected</label>');
+        // $('#addFeatureImage').append('<label>' + alt + ' has been selected</label>');
+        $("#addFeatureImage").append($('<img>',
+            {
+                src: src,
+                width: 175,
+                height: 150,
+            }));
+
         $("#featureImage").attr("disabled", true);
 
 
     });
+
+    $("#category_title").focusout(function(){
+        let title =  $("#category_title").val();
+        console.log(title);
+
+
+        let formData = {
+            'slug_name': title,
+        };
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $.ajax({
+            method: "GET",
+            url: "/getSlug",
+            data: formData,
+            success: function (msg) {
+                $("#category_slug").val(msg);
+
+            },
+        });
+
+
+    });
 });
-
-
 
 
 

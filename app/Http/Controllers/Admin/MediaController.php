@@ -53,7 +53,6 @@ class MediaController extends Controller
 
         if ($request->hasFile('cover_image')) {
 
-            $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
             //Get just filename
             $filename = Str::random(16) . '_' . time();
             //Get just extension
@@ -67,7 +66,7 @@ class MediaController extends Controller
             $sizes = config('images.size');
             foreach ($sizes as $type => $size) {
                 [$width, $height] = $size;
-                $thumbnailpath = "cover_images/$type/{$filename}_{$type}.$extension";
+                $thumbnailpath = "cover_images/$type/$filename.$extension";
 
                 $img = Image::make($request->file('cover_image'))
                     ->resize($width, $height, function ($constraint) {
@@ -125,14 +124,30 @@ class MediaController extends Controller
 //        dd(request()->all());
 
         if ($request->hasFile('cover_image')) {
-            $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
             //Get just filename
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $filename = Str::random(16) . '_' . time();
             //Get just extension
             $extension = $request->file('cover_image')->getClientOriginalExtension();
             //Filename to store
-            $fileNameToStore = $filename . '_' . time() . '.' . $extension;
-            $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
+            $fileNameToStore = $filename . '.' . $extension;
+
+            $request->file('cover_image')
+                ->storeAs('public/cover_images', $fileNameToStore);
+
+            $sizes = config('images.size');
+            foreach ($sizes as $type => $size) {
+                [$width, $height] = $size;
+                $thumbnailpath = "cover_images/$type/{$filename}_{$type}.$extension";
+
+                $img = Image::make($request->file('cover_image'))
+                    ->resize($width, $height, function ($constraint) {
+                        $constraint->aspectRatio();
+
+                    });
+
+                Storage::disk('public')
+                    ->put($thumbnailpath, $img->encode($extension, 80));
+            }
 
             $medium->update(['alt' => request('alt'), 'cover_image' => $fileNameToStore]);
 

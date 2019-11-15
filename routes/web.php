@@ -12,18 +12,15 @@
 */
 
 
+use App\Category;
 use App\Http\Controllers\MediaController;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 Auth::routes();
 
-//Route::get('/', 'PostController@index');
-//Route::get('/home', 'HomeController@index')->name('home');
-//Route::resource('posts','PostController');
-//Route::resource('tags','TagController');
-//Route::resource('category','CategoryController');
-//Route::resource('media','MediaController')->except('update');
-//Route::post('/media/{medium}','MediaController@update');
+
 
 Route::redirect('/', 'admin');
 
@@ -31,6 +28,11 @@ Route::middleware('auth')
     ->namespace('Admin')
     ->group(function (){
         Route::get('admin','HomeController@index')->name('admin');
+        Route::get('getSlug', function (Request $request) {
+//            dd($request->all());
+            $slug = SlugService::createSlug(Category::class, 'slug', \request('slug_name'));
+            return $slug;
+        });
         Route::prefix('admin')
             ->name('admin.')
             ->group(function (){

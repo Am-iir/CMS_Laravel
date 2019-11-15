@@ -6,12 +6,12 @@
             {{csrf_field()}}
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" id="title"  name="name" placeholder="Enter Name">
+                <input type="text" class="form-control" id="category_title"  name="name" placeholder="Enter Name">
             </div>
 
             <div class="form-group">
                 <label for="name">Slug</label>
-                <input type="text" class="form-control" id="slug"  name="slug" placeholder="Enter Slug">
+                <input type="text" class="form-control" id="category_slug"  name="slug" placeholder="Enter Slug">
             </div>
 
             <div class="form-group">

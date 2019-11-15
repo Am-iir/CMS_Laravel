@@ -18,7 +18,7 @@ class CreateMediaPost extends Migration
             $table->foreign('post_id')->references('id')->on('posts')->onUpdate('cascade');
             $table->integer('media_id')->unsigned()->index();
             $table->foreign('media_id')->references('id')->on('media')->onUpdate('cascade');
-            $table->primary(['post_id','media_id']);
+            $table->primary(['post_id', 'media_id']);
         });
     }
 

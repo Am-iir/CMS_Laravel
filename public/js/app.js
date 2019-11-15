@@ -36953,12 +36953,36 @@ $(document).ready(function () {
   $('#postMedia').on('dblclick', 'img', function (e) {
     var $img = $(e.target);
     var mediaId = $img.parent().find("input[name=postMediaId]").val();
-    var alt = $img.attr('alt');
-    console.log(mediaId);
+    var src = $img.attr('src');
     $('#mediaModal').modal('toggle');
-    $('.postMediaName').val(mediaId);
-    $('#addFeatureImage').append('<label>' + alt + ' has been selected</label>');
+    $('.postMediaName').val(mediaId); // $('#addFeatureImage').append('<label>' + alt + ' has been selected</label>');
+
+    $("#addFeatureImage").append($('<img>', {
+      src: src,
+      width: 175,
+      height: 150
+    }));
     $("#featureImage").attr("disabled", true);
+  });
+  $("#category_title").focusout(function () {
+    var title = $("#category_title").val();
+    console.log(title);
+    var formData = {
+      'slug_name': title
+    };
+    $.ajaxSetup({
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      }
+    });
+    $.ajax({
+      method: "GET",
+      url: "/getSlug",
+      data: formData,
+      success: function success(msg) {
+        $("#category_slug").val(msg);
+      }
+    });
   });
 });
 

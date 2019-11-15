@@ -6,6 +6,7 @@ use App\Category;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use \Cviebrock\EloquentSluggable\Services\SlugService;
 
 class CategoryController extends Controller
 {
@@ -48,12 +49,12 @@ class CategoryController extends Controller
         ]);
 
 //        auth()->user()->create_Category(
-//            new Category(request(['name', 'slug', 'description','parent_id']))
+//            new Category(request(['name' ,'slug','description','parent_id']))
 //        );
 
         $category = new Category();
         $category->name =request('name');
-        $category->slug =  Str::kebab(request('slug'));
+        $category->slug =   SlugService::createSlug(Category::class, 'slug', request('slug'));
         $category->description = request('description');
         $category->parent_id = request('parent_id');
         $category->user_id = auth()->id();
