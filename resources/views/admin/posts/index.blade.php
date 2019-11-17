@@ -75,13 +75,11 @@
                                            title="Edit Post">
                                             <i class="fa fa-edit"></i>
                                         </a>
-                                        <a  href="{{route('admin.posts.destroy', $post->id)}}" class="btn btn-danger"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('delete-form').submit();">
+                                        <a  href="{{route('admin.posts.destroy', $post->id)}}" class="btn btn-danger delPost" data-id="{{$post->id}}">
                                             <i class="fa fa-trash"></i>
                                         </a>
 
-                                        <form id="delete-form" action="{{route('admin.posts.destroy', $post->id)}}" method="POST" style="display: none;">
+                                        <form id="delete-form_{{$post->id}}" action="{{route('admin.posts.destroy', $post->id)}}" method="POST" style="display: none;">
                                             @method('DELETE');
                                             @csrf
                                         </form>

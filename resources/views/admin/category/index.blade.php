@@ -52,14 +52,14 @@
                                         </a>
 
 
-                                        <a  href="{{route('admin.category.destroy', $category->slug)}}" class="btn btn-danger delCat">
+                                        <a  href="{{route('admin.category.destroy', $category->slug)}}" class="btn btn-danger delCat" data-slug="{{$category->slug}}">
 {{--                                            onclick="event.preventDefault();--}}
 {{--                                                    --}}
 {{--                                                     document.getElementById('delete-form').submit();">--}}
                                             <i class="fa fa-trash"></i>
                                         </a>
 
-                                        <form id="delete-form" action="{{route('admin.category.destroy', $category->slug)}}" method="POST" style="display: none;">
+                                        <form id="delete-form_{{$category->slug}}" action="{{route('admin.category.destroy', $category->slug)}}" method="POST" style="display: none;">
                                             @method('DELETE')
                                             @csrf
                                         </form>

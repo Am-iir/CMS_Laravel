@@ -47,13 +47,11 @@
                                            title="Edit Tag">
                                             <i class="fa fa-edit"></i>
                                         </a>
-                                        <a  href="{{route('admin.tags.destroy', $tag->name)}}" class="btn btn-danger"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('delete-form').submit();">
+                                        <a  href="{{route('admin.tags.destroy', $tag->name)}}" class="btn btn-danger delTag" data-name="{{$tag->name}}">
                                             <i class="fa fa-trash"></i>
                                         </a>
 
-                                        <form id="delete-form" action="{{route('admin.tags.destroy', $tag->name)}}" method="POST" style="display: none;">
+                                        <form id="delete-form_{{$tag->name}}" action="{{route('admin.tags.destroy', $tag->name)}}" method="POST" style="display: none;">
                                             @method('DELETE');
                                             @csrf
                                         </form>

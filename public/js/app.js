@@ -36984,10 +36984,20 @@ $(document).ready(function () {
       }
     });
   });
-  $('.delCat').on('click', function (e) {
+  $('td').on('click', '.delCat', function (e) {
     e.preventDefault();
-    var a = $('.delCat').parent().find('.slug');
-    console.log(a);
+    var slug = $(this).data('slug');
+    document.getElementById('delete-form_' + slug).submit();
+  });
+  $('td').on('click', '.delTag', function (e) {
+    e.preventDefault();
+    var name = $(this).data('name');
+    document.getElementById('delete-form_' + name).submit();
+  });
+  $('td').on('click', '.delPost', function (e) {
+    e.preventDefault();
+    var id = $(this).data('id');
+    document.getElementById('delete-form_' + id).submit();
   });
 });
 

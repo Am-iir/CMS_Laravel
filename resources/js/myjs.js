@@ -164,15 +164,26 @@ $(document).ready(function () {
 
             },
         });
+    });
 
+
+    $('td').on('click','.delCat',function (e) {
+        e.preventDefault();
+        let slug = $(this).data('slug');
+        document.getElementById('delete-form_'+slug).submit();
 
     });
 
-    $('.delCat').on('click',function (e) {
+    $('td').on('click','.delTag',function (e) {
         e.preventDefault();
-        let a = $('.delCat').parent().find('.slug');
+        let name = $(this).data('name');
+        document.getElementById('delete-form_'+name).submit();
 
-        console.log(a);
+    });
+    $('td').on('click','.delPost',function (e) {
+        e.preventDefault();
+        let id = $(this).data('id');
+        document.getElementById('delete-form_'+id).submit();
 
     });
 
