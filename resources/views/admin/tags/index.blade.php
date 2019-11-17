@@ -39,7 +39,7 @@
                                     </td>
 
                                     <td>
-                                        <a href="{{route('admin.tags.show', $tag->id)}}" class="btn btn-warning"
+                                        <a href="{{route('admin.tags.show',$tag->name)}}" class="btn btn-warning"
                                            title="View Tag">
                                             <i class="fa fa-eye"></i>
                                         </a>
@@ -47,10 +47,16 @@
                                            title="Edit Tag">
                                             <i class="fa fa-edit"></i>
                                         </a>
-                                        <a href="{{route('admin.tags.destroy', $tag->id)}}" class="btn btn-danger"
-                                           title="Delete Tag">
+                                        <a  href="{{route('admin.tags.destroy', $tag->name)}}" class="btn btn-danger"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('delete-form').submit();">
                                             <i class="fa fa-trash"></i>
                                         </a>
+
+                                        <form id="delete-form" action="{{route('admin.tags.destroy', $tag->name)}}" method="POST" style="display: none;">
+                                            @method('DELETE');
+                                            @csrf
+                                        </form>
                                     </td>
                                 </tr>
                             @empty

@@ -6,12 +6,14 @@
             {{csrf_field()}}
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" id="category_title"  name="name" placeholder="Enter Name">
+                <input type="text" class="form-control @errorClass('name')" id="category_title"  name="name"  value="{{ old('name') }}" placeholder="Enter Name">
+                @errorBlock('name')
             </div>
 
             <div class="form-group">
                 <label for="name">Slug</label>
-                <input type="text" class="form-control" id="category_slug"  name="slug" placeholder="Enter Slug">
+                <input type="text" class="form-control @errorClass('slug')" id="category_slug"  name="slug" placeholder="Enter Slug">
+                @errorBlock('slug')
             </div>
 
             <div class="form-group">
@@ -32,7 +34,6 @@
             <div class="form-group">
                 <button type="submit" class="btn btn-primary">Create</button>
             </div>
-            @include('layouts.errors')
 
         </form>
     </div>

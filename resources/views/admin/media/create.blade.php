@@ -6,18 +6,13 @@
     <div class="form-group">
         {{--                <label for="alt">Alt Text</label>--}}
 
-        <input type="text" class="form-control{{ $errors->has('alt') ? ' is-invalid' : '' }}" id="title"  name="alt" placeholder="Enter Alternative text">
-        @if ($errors->has('alt'))
-            <span class="text-danger">{{ $errors->first('alt') }}</span>
-        @endif
+        <input type="text" class="form-control @errorClass('alt')" id="title"  name="alt" value="{{ old('alt') }}" placeholder="Enter Alternative text">
+        @errorBlock('alt')
     </div>
 
     <div class="form-group">
-        <input type="file" name="cover_image">
-        @if ($errors->has('cover_image'))
-            <br>
-            <span class="text-danger">{{ $errors->first('cover_image') }}</span>
-        @endif
+        <input type="file" class="form-control @errorClass('cover_image')" name="cover_image" value="{{ old('cover_image') }}">
+        @errorBlock('cover_image')
     </div>
 
 

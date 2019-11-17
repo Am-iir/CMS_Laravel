@@ -75,10 +75,18 @@
                                            title="Edit Post">
                                             <i class="fa fa-edit"></i>
                                         </a>
-                                        <a href="{{route('admin.posts.destroy', $post->id)}}" class="btn btn-danger"
-                                           title="Delete Post">
+                                        <a  href="{{route('admin.posts.destroy', $post->id)}}" class="btn btn-danger"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('delete-form').submit();">
                                             <i class="fa fa-trash"></i>
                                         </a>
+
+                                        <form id="delete-form" action="{{route('admin.posts.destroy', $post->id)}}" method="POST" style="display: none;">
+                                            @method('DELETE');
+                                            @csrf
+                                        </form>
+
+
                                     </td>
                                 </tr>
                             @empty
@@ -96,41 +104,6 @@
             </div>
         </div>
     </div>
-
-{{--    <div class="container">--}}
-{{--        @if(count($posts)>0)--}}
-{{--            @foreach($posts as $post)--}}
-
-{{--                <div class="card">--}}
-{{--                    <div class="card-header">--}}
-{{--                        <h3 class="blog-post-title">--}}
-{{--                            <a href="{{route('admin.posts.show' , $post->id)}}">--}}
-{{--                                {{$post->title}}--}}
-{{--                            </a>--}}
-{{--                        </h3>--}}
-
-{{--                    </div>--}}
-
-{{--                    <div class="card-body">--}}
-{{--                        <p class="blog-post-meta">--}}
-
-{{--                            {{$post->created_at->toFormattedDateString()}}</p>--}}
-{{--                        {!!$post->description  !!}--}}
-
-{{--                    </div>--}}
-
-{{--                </div>--}}
-
-{{--                <br>--}}
-
-
-{{--            @endforeach--}}
-{{--            {{$posts->links()}}--}}
-{{--        @else--}}
-{{--            <p> No posts found</p>--}}
-{{--        @endif--}}
-
-{{--    </div>--}}
 
 @endsection
 

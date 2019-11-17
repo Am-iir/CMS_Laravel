@@ -7,23 +7,29 @@
                 {{csrf_field()}}
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input type="text" class="form-control" id="title" name="title" placeholder="Enter Title">
+
+                    <input type="text" class="form-control @errorClass('title')" id="title" name="title" value="{{ old('title') }}" placeholder="Enter Title">
+                   @errorBlock('title')
                 </div>
                 <div class="form-group">
                     <label for="description">Description</label>
-                    <textarea name="description" class="form-control" id="article-ckeditor" cols="30" rows="4"
-                              placeholder="Enter description about your post"></textarea>
+                    <textarea name="description" class="form-control @errorClass('description')" id="article-ckeditor" cols="30" rows="4"
+                              placeholder="Enter description about your post"> {{ old('description') }} </textarea>
+                    @errorBlock('description')
                 </div>
 
+
                 <div class="form-group" id="addFeatureImage">
-                    <button  class="btn btn-primary btn-sm" id="featureImage" > + Add Featured Image</button>
-                    <input type="hidden" name="media_id" class="postMediaName" value="">
+                    <button  class="btn btn-primary btn-sm  " id="featureImage" > + Add Featured Image</button>
+                    <input type="hidden" name="media_id" class="form-control @errorClass('media_id') postMediaName" value="">
+                    @errorBlock('media_id')
+
                 </div>
 
                 <div class="form-group">
                     <label class="control-label" for="tag_id">Choose your tags</label>
 
-                    <select name="tag_id[]" id="tag_list" class="form-control select2" multiple="multiple">
+                    <select name="tag_id[]" id="tag_list" class="form-control select2 @errorClass('tag_id')" multiple="multiple">
                         @forelse($tags as $tag)
                             <option value="{{$tag->id}}">{{$tag->name}}</option>
                         @empty
@@ -31,7 +37,14 @@
                         @endforelse
 
                     </select>
+                    @errorBlock('tag_id')
+
+{{--                    @if ($errors->has('tag_id'))--}}
+{{--                        <span class="text-danger"><strong>{{ $errors->first('tag_id') }}</strong></span>--}}
+{{--                    @endif--}}
                 </div>
+
+
                 <div class="newTag">
                     <button  class="btn btn-primary btn-sm" id="addBtn"> + Add New Tag</button>
 
@@ -40,52 +53,18 @@
 
                 <div class="form-group">
                     <label for="categories">Select Category</label>
-                    <select id="categories" name="" multiple class="form-control select2">
+                    <select id="categories" name="category_id" multiple class="form-control select2 @errorClass('category_id')">
                         @foreach($categories as $category)
                             @include('admin.posts._category', ['space' => 0])
                         @endforeach
                     </select>
+                    @errorBlock('category_id')
+
                 </div>
-
-
-
-{{--                <div class="form-group">--}}
-{{--                    <p> Choose your category</p>--}}
-
-{{--                    @foreach($categories as $category)--}}
-{{--                        <ul>--}}
-{{--                            <li>--}}
-{{--                                <input type="checkbox" value="{{$category['id']}}" name="category_id[]">--}}
-{{--                                <label for="category">{{$category['name']}}</label>--}}
-
-{{--                                @for($i=0 ; $i<count($category['children_recursive']);$i++)--}}
-
-{{--                                    @if(!empty($category['children_recursive']))--}}
-{{--                                        <ul>--}}
-{{--                                            <li>--}}
-{{--                                                <input type="checkbox"--}}
-{{--                                                       value="{{$category['children_recursive'][$i]['id']}}"--}}
-{{--                                                       name="category_id[]">--}}
-{{--                                                <label--}}
-{{--                                                    for="category">{{$category['children_recursive'][$i]['name']}}</label>--}}
-{{--                                                @include('layouts.categorydisplay')--}}
-{{--                                            </li>--}}
-{{--                                        </ul>--}}
-
-{{--                                    @endif--}}
-{{--                                @endfor--}}
-
-{{--                            </li>--}}
-
-{{--                        </ul>--}}
-
-{{--                    @endforeach--}}
-{{--                </div>--}}
 
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Publish</button>
                 </div>
-                @include('layouts.errors')
 
             </form>
 

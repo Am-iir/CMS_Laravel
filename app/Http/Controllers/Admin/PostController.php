@@ -96,7 +96,7 @@ class PostController extends Controller
     {
         abort_if($post->user_id !== auth()->id(), 403);
         $tags = Tag::all();
-        $categories = Category::with('childrenRecursive')->whereNull('parent_id')->get()->toArray();
+        $categories = Category::all();
 
         return view('admin.posts.edit', compact('post','tags','categories'));
     }

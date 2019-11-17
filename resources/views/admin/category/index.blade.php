@@ -3,44 +3,83 @@
 @section('content')
 
 
-    <table class="table table-striped">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Posts</h1>
 
-        <thead>
-        <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Actions</th>
+        <a href="{{route('admin.category.create')}}"
+           class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+            <i class="fas fa-plus fa-sm text-white-50 mr-2"></i> Add New
+        </a>
+    </div>
 
-        </tr>
-        </thead>
-        <tbody>
-        @if(count($categories)>0)
-            @foreach($categories as $indexKey => $category)
+    <div class="row">
+
+        <!-- Content Column -->
+        <div class="col-lg-12 mb-4">
+            <!-- Project Card Example -->
+            <div class="card shadow">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Slug</th>
+                                <th>Date</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @forelse($categories as $index => $category)
+                                <tr>
+                                    <td>{{$index + $categories->firstItem()}}</td>
+                                    <td>{{$category->name}}</td>
+                                    <td ><span class="slug"></span>{{$category->slug}}</td>
+
+                                    <td>
+                                        {{$category->created_at->diffForHumans()}}
+                                    </td>
+
+                                    <td>
+                                        <a href="{{route('admin.category.show', $category->slug)}}" class="btn btn-warning"
+                                           title="View Slug">
+                                            <i class="fa fa-eye"></i>
+                                        </a>
+                                        <a href="{{route('admin.category.edit', $category->slug)}}" class="btn btn-primary"
+                                           title="Edit Category">
+                                            <i class="fa fa-edit"></i>
+                                        </a>
 
 
-                <tr>
-                    <td>{{$indexKey+1}}</td>
-                    <td> <h5> <a href="/category/{{$category->id}}">
-                                {{$category->name}}
-                            </a>
-                        </h5>
-                    </td>
-                    <td>
-                        <button class="btn btn-primary">  Edit</button>
-                        <button class="btn btn-danger"> Delete</button>
-                    </td>
+                                        <a  href="{{route('admin.category.destroy', $category->slug)}}" class="btn btn-danger delCat">
+{{--                                            onclick="event.preventDefault();--}}
+{{--                                                    --}}
+{{--                                                     document.getElementById('delete-form').submit();">--}}
+                                            <i class="fa fa-trash"></i>
+                                        </a>
 
-                </tr>
-            @endforeach
+                                        <form id="delete-form" action="{{route('admin.category.destroy', $category->slug)}}" method="POST" style="display: none;">
+                                            @method('DELETE')
+                                            @csrf
+                                        </form>
 
-        </tbody>
-    </table>
-
-
-        @else
-            <p> No categories found</p>
-        @endif
-
-
+                                    </td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="8" class="text-center text-uppercase font-weight-bold">
+                                        No Categories available
+                                    </td>
+                                </tr>
+                            @endforelse
+                            </tbody>
+                        </table>
+                    </div>
+                    {{$categories->links()}}
+                </div>
+            </div>
+        </div>
+    </div>
 
 @endsection

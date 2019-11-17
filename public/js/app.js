@@ -36984,6 +36984,11 @@ $(document).ready(function () {
       }
     });
   });
+  $('.delCat').on('click', function (e) {
+    e.preventDefault();
+    var a = $('.delCat').parent().find('.slug');
+    console.log(a);
+  });
 });
 
 /***/ }),

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Category;
 use App\Http\Controllers\Controller;
+use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
@@ -44,7 +45,7 @@ class CategoryController extends Controller
     {
         $this->validate(request(), [
             'name' => 'required',
-            'description' => 'required'
+            'slug' => 'required'
 
         ]);
 
@@ -104,11 +105,22 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Category  $category
+     * @param \App\Category $category
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
     public function destroy(Category $category)
     {
-        //
+//        dd($category);
+        $category_id = $category->id;
+        dd($category_id);
+//        $count = Post::whereHas('categories', function ($query) use ($category_id) {
+//            $query->where('category_id', $category_id);
+//        })->count();
+//        dd($count);
+        $category->delete();
+
+        return redirect()->route('admin.category.index');
+
     }
 }

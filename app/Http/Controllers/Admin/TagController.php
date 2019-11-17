@@ -95,6 +95,6 @@ class TagController extends Controller
      */
     public function destroy(Tag $tag)
     {
-        //
+        dd($tag);
     }
 }

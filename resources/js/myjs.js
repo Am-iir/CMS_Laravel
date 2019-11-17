@@ -167,6 +167,15 @@ $(document).ready(function () {
 
 
     });
+
+    $('.delCat').on('click',function (e) {
+        e.preventDefault();
+        let a = $('.delCat').parent().find('.slug');
+
+        console.log(a);
+
+    });
+
 });
 
 
