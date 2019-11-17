@@ -11,6 +11,8 @@
         </a>
     </div>
 
+    @include('layouts.flash_message')
+
     <div class="row">
 
         <!-- Content Column -->

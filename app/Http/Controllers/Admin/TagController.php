@@ -90,11 +90,21 @@ class TagController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Tag  $tag
+     * @param \App\Tag $tag
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
     public function destroy(Tag $tag)
     {
-        dd($tag);
+        if (count($tag->posts)){
+            return back()
+                ->with('error','Something went wrong!!  You cannot delete !');
+        }
+        else{
+            $tag->delete();
+            return back()
+                ->with('success','Deleted successfully!');
+        }
     }
+
 }

@@ -12,7 +12,10 @@
         </a>
     </div>
 
+    @include('layouts.flash_message')
+
     <div class="row">
+
 
         <!-- Content Column -->
         <div class="col-lg-12 mb-4">

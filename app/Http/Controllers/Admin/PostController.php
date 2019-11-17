@@ -129,6 +129,7 @@ class PostController extends Controller
     {
         abort_if($post->user_id !== auth()->id(), 403);
         $post->delete();
-        return redirect()->route('admin.posts.index');
+        return back()
+            ->with('success','Deleted successfully!');
     }
 }

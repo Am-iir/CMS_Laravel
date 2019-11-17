@@ -111,16 +111,15 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-//        dd($category);
-        $category_id = $category->id;
-        dd($category_id);
-//        $count = Post::whereHas('categories', function ($query) use ($category_id) {
-//            $query->where('category_id', $category_id);
-//        })->count();
-//        dd($count);
-        $category->delete();
 
-        return redirect()->route('admin.category.index');
-
+       if (count($category->posts)){
+           return back()
+               ->with('error','Something went wrong!!  You cannot delete !');
+       }
+       else{
+           $category->delete();
+           return back()
+               ->with('success','Deleted successfully!');
+       }
     }
 }
