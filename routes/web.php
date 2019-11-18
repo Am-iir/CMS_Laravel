@@ -22,7 +22,11 @@ Auth::routes();
 
 
 
-Route::redirect('/', 'admin');
+Route::redirect('/admin', 'admin');
+Route::get('/','FrontController@index');
+Route::get('/posts/{post}','FrontController@show')->name('front.show');
+
+
 
 Route::middleware('auth')
     ->namespace('Admin')
