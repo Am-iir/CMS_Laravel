@@ -1,17 +1,18 @@
 @extends('layouts.frontend')
 @section('content')
     @forelse($post->media as $media)
-<header class="masthead" style="background-image: url( {{asset('/storage/cover_images/'.$media->cover_image)}}) ">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-10 mx-auto">
-                <div class="post-heading">
-                    <h1>{{$post->title}}</h1>
-                    <span class="meta mb-3">Posted by
+        <header class="masthead"
+                style="background-image: url( {{asset('/storage/cover_images/'.$media->cover_image)}}) ">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-10 mx-auto">
+                        <div class="post-heading">
+                            <h1>{{$post->title}}</h1>
+                            <span class="meta mb-3">Posted by
               {{$post->user->name}}
               on {{$post->created_at->toFormattedDateString()}}</span>
-                    <span >
+                            <span>
                         <small>
                     <i class="fas fa-tags"></i>
                     @forelse($post->tags as $tag)
@@ -22,7 +23,7 @@
                             @endforelse
                 </small>
                     </span>
-                    <span class="ml-5">
+                            <span class="ml-5">
 
                     <small>
 
@@ -37,24 +38,24 @@
                     </small>
 
                     </span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</header>
+        </header>
 
-<article>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-10 mx-auto">
-                {!!  $post->description !!}
+        <article>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-10 mx-auto">
+                        {!!  $post->description !!}
 
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</article>
+        </article>
 
-        @empty
+    @empty
         ---
     @endforelse
 
