@@ -18,6 +18,12 @@
             <span>Dashboard</span></a>
     </li>
 
+    <li class="nav-item">
+        <a class="nav-link" href="/">
+            <i class="fas fa-home"></i>
+            <span>Home</span></a>
+    </li>
+
     <!-- Divider -->
     <hr class="sidebar-divider">
 

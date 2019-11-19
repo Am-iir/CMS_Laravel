@@ -1,7 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.frontend')
 
 @section('content')
-    <body>
 
     <!-- Page Header -->
     <header class="masthead" style="background-image: url('img/home-bg.jpg')">
@@ -105,13 +104,6 @@
 
         </div>
 
-
-
-
         </div>
-
-
-    </body>
-
 
 @endsection

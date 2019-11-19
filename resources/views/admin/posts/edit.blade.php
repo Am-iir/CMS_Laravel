@@ -18,12 +18,22 @@
         <div class="form-group">
             <label class="control-label" for="tag_id">Choose your tags</label>
 
+
             <select name="tag_id[]" id="tag_list" class="form-control select2 " multiple="multiple">
+
+                @foreach($post->tags as $tg)
+                    <option value="{{$tg->id}}" selected="selected" >{{$tg->name}}</option>
+
+                @endforeach
+
                 @forelse($tags as $tag)
-                    <option value="{{$tag->id}}">{{$tag->name}}</option>
+
+                    <option value="{{$tag->id}}" >{{$tag->name}}</option>
+
                 @empty
                     <option value="" disabled>No tags available</option>
                 @endforelse
+
 
             </select>
 
@@ -33,6 +43,10 @@
         <div class="form-group">
             <label for="categories">Select Category</label>
             <select id="categories" name="category_id" multiple class="form-control select2 @errorClass('category_id')">
+                @foreach($post->categories as $cat)
+                    <option value="{{$cat->id}}" selected="selected" >{{$cat->name}}</option>
+
+                @endforeach
                 @foreach($categories as $category)
                     @include('admin.posts._category', ['space' => 0])
                 @endforeach

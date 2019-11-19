@@ -23,8 +23,8 @@ Auth::routes();
 
 
 Route::redirect('/admin', 'admin');
-Route::get('/','FrontController@index');
-Route::get('/posts/{post}','FrontController@show')->name('front.show');
+Route::get('/','PostsController@index');
+Route::get('/posts/{post}','PostsController@show')->name('front.show');
 
 
 

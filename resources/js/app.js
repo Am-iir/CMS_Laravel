@@ -8,3 +8,5 @@
 require('./bootstrap');
 
 require('./myjs');
+
+require('./clean-blog');
