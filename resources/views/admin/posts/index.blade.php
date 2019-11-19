@@ -29,7 +29,8 @@
                                 <th>Author</th>
                                 <th>Categories</th>
                                 <th>Tags</th>
-                                <th class="text-center"><i class="fa fa-comment-alt"></i></th>
+                                <th>Slug</th>
+{{--                                <th class="text-center"><i class="fa fa-comment-alt"></i></th>--}}
                                 <th>Date</th>
                                 <th>Action</th>
                             </tr>
@@ -57,11 +58,8 @@
                                         @endforelse
                                     </td>
 
-                                    <td class="text-center">
-                                        <span class="fa-stack">
-                                            <i class="fa fa-comment-alt fa-stack-2x"></i>
-                                            <strong class="fa-stack-1x text-white">0</strong>
-                                        </span>
+                                    <td>
+                                        {{$post->slug}}
                                     </td>
 
                                     <td>
@@ -73,15 +71,15 @@
                                            title="View Post">
                                             <i class="fa fa-eye"></i>
                                         </a>
-                                        <a href="{{route('admin.posts.edit', $post->id)}}" class="btn btn-primary"
+                                        <a href="{{route('admin.posts.edit', $post->slug)}}" class="btn btn-primary"
                                            title="Edit Post">
                                             <i class="fa fa-edit"></i>
                                         </a>
-                                        <a  href="{{route('admin.posts.destroy', $post->id)}}" class="btn btn-danger delPost" data-id="{{$post->id}}">
+                                        <a  href="{{route('admin.posts.destroy', $post->slug)}}" class="btn btn-danger delPost" data-id="{{$post->id}}">
                                             <i class="fa fa-trash"></i>
                                         </a>
 
-                                        <form id="delete-form_{{$post->id}}" action="{{route('admin.posts.destroy', $post->id)}}" method="POST" style="display: none;">
+                                        <form id="delete-form_{{$post->slug}}" action="{{route('admin.posts.destroy', $post->id)}}" method="POST" style="display: none;">
                                             @method('DELETE');
                                             @csrf
                                         </form>

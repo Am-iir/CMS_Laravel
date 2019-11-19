@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Media;
 use App\Post;
 use App\Tag;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -58,14 +59,11 @@ class PostController extends Controller
             'tag_id' => 'required',
             'category_id' => 'required'
 
-
         ]);
-//       dd($request->all());
 
         $post = auth()->user()->publish(
             new Post(request(['title', 'description']))
         );
-
 
         $post->tags()->attach(request('tag_id'));
         $post->categories()->attach(request('category_id'));

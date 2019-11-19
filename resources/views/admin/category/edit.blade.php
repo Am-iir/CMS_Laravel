@@ -12,7 +12,7 @@
         </div>
 
         <div class="form-group">
-            <textarea name="description" class="form-control" id="" cols="30" rows="10">{{$category->description}}</textarea>
+            <textarea name="description" class="form-control" id="" cols="30" rows="5">{{$category->description}}</textarea>
         </div>
 
         <div class="form-group">

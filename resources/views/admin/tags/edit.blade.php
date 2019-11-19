@@ -1,8 +1,8 @@
 
-@extends('layouts.master')
+@extends('layouts.admin')
 
 @section('content')
-    <h1> Edit Post</h1>
+    <h1> Edit Tag</h1>
     <form action="{{route('admin.tags.update' , $tag->id)}}" method="POST">
         {{method_field('PATCH')}}
         {{csrf_field()}}
@@ -12,7 +12,7 @@
         </div>
 
         <div class="form-group">
-            <textarea name="description" class="form-control" id="" cols="30" rows="10">{{$tag->description}}</textarea>
+            <textarea name="description" class="form-control" id="" cols="30" rows="5">{{$tag->description}}</textarea>
         </div>
 
         <div class="form-group">
