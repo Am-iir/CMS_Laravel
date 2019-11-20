@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddSlugField extends Migration
+class CreateTablePages extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class AddSlugField extends Migration
      */
     public function up()
     {
-        Schema::table('posts', function (Blueprint $table) {
+        Schema::create('pages', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('title');
             $table->string('slug')->unique();
+            $table->json('content');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +29,6 @@ class AddSlugField extends Migration
      */
     public function down()
     {
-        Schema::table('posts', function (Blueprint $table) {
-            $table->dropColumn(['slug']);
-        });
+        Schema::dropIfExists('pages');
     }
 }

@@ -21,12 +21,8 @@ use Illuminate\Http\Request;
 Auth::routes();
 
 
-
-Route::redirect('/admin', 'admin');
 Route::get('/','PostsController@index');
 Route::get('/posts/{post}','PostsController@show')->name('front.show');
-
-
 
 Route::middleware('auth')
     ->namespace('Admin')
@@ -44,6 +40,15 @@ Route::middleware('auth')
                 Route::resource('category','CategoryController');
                 Route::resource('media','MediaController')->except('update');
                 Route::post('/media/{medium}','MediaController@update')->name('media.update');
+                Route::get('/pages/{page}/edit','PageController@edit')->name('pages.edit');
+                Route::post('/pages/{page}','PageController@update')->name('pages.update');
+
             });
     });
+Route::namespace('Admin')
+    ->group(function (){
+        Route::get('/{page}','PageController@show');
+    });
+
+
 

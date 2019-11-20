@@ -28,11 +28,39 @@
     <hr class="sidebar-divider">
 
     <!-- Heading -->
+
+
+    <!-- Nav Item - Pages -->
+
+    <div class="sidebar-heading">
+        Pages
+    </div>
+
+    <li class="nav-item {{navActive('admin.pages')}}">
+        <a class="nav-link {{isCollapsed('admin.pages')}}" href="#" data-toggle="collapse" data-target="#collapsePage"
+           aria-expanded="true" aria-controls="collapsePage">
+            <i class="fa fa-file"></i>
+            <span>Pages</span>
+        </a>
+        <div id="collapsePage" class="collapse {{collapseShow('admin.pages')}}" aria-labelledby="headingTwo"
+             data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Menu</h6>
+                <a class="collapse-item" href="{{route('admin.pages.edit', 'about')}}">About</a>
+                <a class="collapse-item" href="{{route('admin.pages.edit', 'contact')}}">Contact</a>
+
+
+            </div>
+        </div>
+    </li>
+
+    <!-- Nav Item - Posts -->
+
+
+    <hr class="sidebar-divider">
     <div class="sidebar-heading">
         Posts
     </div>
-
-    <!-- Nav Item - Posts -->
 
 
     <li class="nav-item {{navActive('admin.posts')}}">

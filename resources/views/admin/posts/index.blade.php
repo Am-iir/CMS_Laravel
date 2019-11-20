@@ -67,7 +67,7 @@
                                     </td>
 
                                     <td class="text-center">
-                                        <a href="{{route('admin.posts.show', $post->id)}}" class="btn btn-warning"
+                                        <a href="{{route('admin.posts.show', $post->slug)}}" class="btn btn-warning"
                                            title="View Post">
                                             <i class="fa fa-eye"></i>
                                         </a>

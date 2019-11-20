@@ -36,7 +36,7 @@
 
                         <div class="card-body pt-0">
                             <div class="row">
-                                <div class="col-sm-2 mt-5">
+                                <div class="col-sm-2 mt-3">
                                     @forelse($post->media as $media)
                                         <img src="{{asset('/storage/cover_images/thumbnail/'.$media->cover_image)}}"
                                              alt="{{ $media->alt }}">
@@ -46,7 +46,7 @@
                                     @endforelse
                                 </div>
                                 <div class="col-sm-10 ">
-                                    {!! \Illuminate\Support\Str::words($post->description, 25,'  ......')  !!}
+                                    {!! \Illuminate\Support\Str::words(strip_tags($post->description), 25,'  ......')  !!}
 
                                 </div>
                             </div>
@@ -62,7 +62,7 @@
                                         @endforelse
                                     </small>
                                 </div>
-                                <div class="col-sm-3 ">
+                                <div class="col-sm-5 ">
                                     <small>
 
                                         <i class="fas fa-wrench"></i>
@@ -76,7 +76,7 @@
                                     </small>
                                 </div>
 
-                                <div class="col-sm-2 offset-3">
+                                <div class="col-sm-2 offset-1">
                                     <a href="{{route('front.show' , $post->slug)}}" class="btn-sm  btn-secondary p-2">View
                                         Post.. </a>
 
