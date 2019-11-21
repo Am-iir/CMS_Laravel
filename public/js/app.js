@@ -37049,6 +37049,11 @@ $(document).ready(function () {
     var id = $(this).data('id');
     document.getElementById('delete-form_' + id).submit();
   });
+  $('td').on('click', '.delUser', function (e) {
+    e.preventDefault();
+    var id = $(this).data('id');
+    document.getElementById('delete-form_' + id).submit();
+  });
 });
 
 /***/ }),

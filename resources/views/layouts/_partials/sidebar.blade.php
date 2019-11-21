@@ -130,6 +130,25 @@
             </div>
         </div>
     </li>
+
+    <!-- Divider -->
+
+    @if(auth()->user()->type == 'admin')
+        <li class="nav-item {{navActive('admin.users')}}">
+            <a class="nav-link {{isCollapsed('admin.users')}}" href="#" data-toggle="collapse" data-target="#collapseUser"
+               aria-expanded="true" aria-controls="collapseUser">
+                <i class="fas fa-images"></i>
+                <span>Users</span>
+            </a>
+            <div id="collapseUser" class="collapse {{collapseShow('admin.users')}}" aria-labelledby="headingTwo"
+                 data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Menu</h6>
+                    <a class="collapse-item" href="{{route('admin.users.index')}}">All users</a>
+                </div>
+            </div>
+        </li>
+    @endif
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 

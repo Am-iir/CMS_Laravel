@@ -18,7 +18,8 @@
         "laravel/tinker": "^1.0",
         "spatie/laravel-sluggable": "^2.2",
         "unisharp/laravel-ckeditor": "^4.7",
-        "ext-json": "*"
+        "ext-json": "*",
+        "ext-http": "*"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",

@@ -187,6 +187,13 @@ $(document).ready(function () {
 
     });
 
+    $('td').on('click','.delUser',function (e) {
+        e.preventDefault();
+        let id = $(this).data('id');
+        document.getElementById('delete-form_'+id).submit();
+
+    });
+
 });
 
 

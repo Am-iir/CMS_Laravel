@@ -44,8 +44,13 @@ Route::middleware('auth')
                 Route::get('/pages/{page}/edit','PageController@edit')->name('pages.edit');
                 Route::post('/pages/{page}','PageController@update')->name('pages.update');
 
+                Route::middleware('admin')
+                    ->group(function(){
+                        Route::resource('users','UserController');
+                    });
             });
     });
+
 Route::namespace('Admin')
     ->group(function (){
         Route::get('/{page}','PageController@show');
