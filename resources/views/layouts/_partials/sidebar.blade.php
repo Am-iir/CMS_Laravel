@@ -137,7 +137,7 @@
         <li class="nav-item {{navActive('admin.users')}}">
             <a class="nav-link {{isCollapsed('admin.users')}}" href="#" data-toggle="collapse" data-target="#collapseUser"
                aria-expanded="true" aria-controls="collapseUser">
-                <i class="fas fa-images"></i>
+                <i class="fas fa-user"></i>
                 <span>Users</span>
             </a>
             <div id="collapseUser" class="collapse {{collapseShow('admin.users')}}" aria-labelledby="headingTwo"

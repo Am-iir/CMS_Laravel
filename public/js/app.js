@@ -37054,6 +37054,28 @@ $(document).ready(function () {
     var id = $(this).data('id');
     document.getElementById('delete-form_' + id).submit();
   });
+  $('.contact_form').on('click', '#sendMessageButton', function (e) {
+    e.preventDefault();
+    var formData = {
+      'name': $('#name').val(),
+      'email': $('#email').val(),
+      'content': $('#content').val()
+    };
+    $.ajaxSetup({
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      }
+    });
+    $.ajax({
+      method: "POST",
+      url: "/contact/sendMessage",
+      error: function error(data) {
+        $.each(data.responseJSON.error, function (key, value) {
+          $('#' + key).addClass('is-invalid').siblings('.error').html(value).addClass('invalid-feedback');
+        });
+      }
+    });
+  });
 });
 
 /***/ }),

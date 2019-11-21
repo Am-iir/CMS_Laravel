@@ -9,6 +9,7 @@ use App\Mail\Contact;
 use App\Page;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Validator;
 
 class PageController extends Controller
 {
@@ -48,17 +49,22 @@ class PageController extends Controller
 
     public function sendMessage(Request $request)
     {
-        $this->validate($request, [
+
+        $validate = Validator:: make($request->all(),[
             'name' => 'required',
             'content' => 'required',
             'email'=>'required',
 
-
         ]);
+
+        if ($validate->fails()){
+            return response()->json(['error'=> $validate->errors()],422);
+        }
+
         $data = $request->all();
 
         SendEmailJob::dispatch($data);
 //        Mail::queue(new Contact($data));
-        return redirect()->back();
+        return response()->json();
     }
 }

@@ -7,9 +7,12 @@ use App\Post;
 
 class PostsController extends Controller
 {
-    public function index(){
+    public function index()
+    {
 
-        $posts = Post::orderBy('created_at','desc')->paginate(3);
+        $posts = Post::orderBy('created_at', 'desc')
+            ->with(['user', 'tags', 'media', 'categories'])
+            ->paginate(3);
 
         return view('frontend.home', compact('posts'));
     }

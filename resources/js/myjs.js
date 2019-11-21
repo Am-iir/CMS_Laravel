@@ -140,8 +140,8 @@ $(document).ready(function () {
 
     });
 
-    $("#category_title").focusout(function(){
-        let title =  $("#category_title").val();
+    $("#category_title").focusout(function () {
+        let title = $("#category_title").val();
         console.log(title);
 
 
@@ -167,30 +167,66 @@ $(document).ready(function () {
     });
 
 
-    $('td').on('click','.delCat',function (e) {
+    $('td').on('click', '.delCat', function (e) {
         e.preventDefault();
         let slug = $(this).data('slug');
-        document.getElementById('delete-form_'+slug).submit();
+        document.getElementById('delete-form_' + slug).submit();
 
     });
 
-    $('td').on('click','.delTag',function (e) {
+    $('td').on('click', '.delTag', function (e) {
         e.preventDefault();
         let name = $(this).data('name');
-        document.getElementById('delete-form_'+name).submit();
+        document.getElementById('delete-form_' + name).submit();
 
     });
-    $('td').on('click','.delPost',function (e) {
+    $('td').on('click', '.delPost', function (e) {
         e.preventDefault();
         let id = $(this).data('id');
-        document.getElementById('delete-form_'+id).submit();
+        document.getElementById('delete-form_' + id).submit();
 
     });
 
-    $('td').on('click','.delUser',function (e) {
+    $('td').on('click', '.delUser', function (e) {
         e.preventDefault();
         let id = $(this).data('id');
-        document.getElementById('delete-form_'+id).submit();
+        document.getElementById('delete-form_' + id).submit();
+
+    });
+
+
+    $('.contact_form').on('click', '#sendMessageButton', function (e) {
+        e.preventDefault();
+
+        let formData = {
+            'name': $('#name').val(),
+            'email': $('#email').val(),
+            'content': $('#content').val()
+
+        };
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $.ajax({
+            method: "POST",
+            url: "/contact/sendMessage",
+            error: function (data) {
+
+                $.each(data.responseJSON.error, function (key, value) {
+                    $('#' + key).addClass('is-invalid')
+                        .siblings('.error')
+                        .html(value)
+                        .addClass('invalid-feedback');
+
+
+                })
+            },
+        });
+
 
     });
 
