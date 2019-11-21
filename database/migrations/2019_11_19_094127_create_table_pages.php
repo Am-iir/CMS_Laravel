@@ -19,6 +19,7 @@ class CreateTablePages extends Migration
             $table->string('slug')->unique();
             $table->json('content');
             $table->timestamps();
+
         });
     }
 

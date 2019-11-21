@@ -35,6 +35,7 @@ Route::middleware('auth')
         Route::prefix('admin')
             ->name('admin.')
             ->group(function (){
+
                 Route::resource('posts','PostController');
                 Route::resource('tags','TagController');
                 Route::resource('category','CategoryController');
@@ -48,6 +49,8 @@ Route::middleware('auth')
 Route::namespace('Admin')
     ->group(function (){
         Route::get('/{page}','PageController@show');
+        Route::post('/contact/sendMessage','PageController@sendMessage');
+
     });
 
 

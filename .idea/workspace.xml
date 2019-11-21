@@ -2,25 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b426e174-d8ab-4e1e-b1b4-f6487596f394" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PageController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Page.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/PagesTableSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/about-bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/contact-bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/about.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/contact.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Jobs/SendEmailJob.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Mail/Contact.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_11_20_144359_create_jobs_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_11_21_050824_create_failed_jobs_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/pages/email.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_01_073731_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_01_073731_create_posts_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_19_052445_add_slug_field.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_19_094127_create_table_pages.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/media/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/media/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/posts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/posts/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/posts/mainHome.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/_partials/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/_partials/navbar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/_partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/_partials/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Page.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_19_094127_create_table_pages.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_19_094127_create_table_pages.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/contact.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -374,7 +365,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574142387031</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Pages Content Handled">
+      <created>1574241394039</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1574241394039</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -415,6 +413,7 @@
     <MESSAGE value="Front End finished" />
     <MESSAGE value="Small fixes and Post Slug Handled" />
     <MESSAGE value="Small Fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Small Fixes" />
+    <MESSAGE value="Pages Content Handled" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pages Content Handled" />
   </component>
 </project>
