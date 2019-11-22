@@ -234,7 +234,7 @@ $(document).ready(function () {
             },
             success: function (msg) {
                 $(".success").html('Message has been sent').addClass('alert alert-success alert-block');
-                $(".success").append('<button type="button" class="close" data-dismiss="alert">×</button>');
+                // $(".success").append('<button type="button" class="close" data-dismiss="alert">×</button>');
 
                 // let array = ['name','email','content'];
                 //
