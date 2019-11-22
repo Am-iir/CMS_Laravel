@@ -50,7 +50,6 @@ $(document).ready(function () {
 
     $(document).on('click', '#delete', function (e) {
 
-
         let formData = {
 
             'delete_id': $("input[name=updateimage_id]").val(),
@@ -91,7 +90,6 @@ $(document).ready(function () {
         };
         let last = parseInt($('#tag_list option:last-child').val()) + 1;
 
-
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -127,7 +125,6 @@ $(document).ready(function () {
 
         $('#mediaModal').modal('toggle');
         $('.postMediaName').val(mediaId);
-        // $('#addFeatureImage').append('<label>' + alt + ' has been selected</label>');
         $("#addFeatureImage").append($('<img>',
             {
                 src: src,
@@ -143,8 +140,6 @@ $(document).ready(function () {
     $("#category_title").focusout(function () {
         let title = $("#category_title").val();
         console.log(title);
-
-
         let formData = {
             'slug_name': title,
         };
@@ -165,7 +160,6 @@ $(document).ready(function () {
             },
         });
     });
-
 
     $('td').on('click', '.delCat', function (e) {
         e.preventDefault();
@@ -228,7 +222,6 @@ $(document).ready(function () {
                         .siblings('.error')
                         .html(value)
                         .addClass('invalid-feedback');
-
 
                 })
             },

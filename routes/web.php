@@ -51,12 +51,9 @@ Route::middleware('auth')
             });
     });
 
-Route::namespace('Admin')
-    ->group(function (){
-        Route::get('/{page}','PageController@show');
-        Route::post('/contact/sendMessage','PageController@sendMessage');
+Route::get('/{page}','FrontendController@show');
+Route::post('/contact/sendMessage','FrontendController@sendMessage');
 
-    });
 
 
 

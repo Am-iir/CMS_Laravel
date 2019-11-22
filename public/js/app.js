@@ -37005,8 +37005,7 @@ $(document).ready(function () {
     var mediaId = $img.parent().find("input[name=postMediaId]").val();
     var src = $img.attr('src');
     $('#mediaModal').modal('toggle');
-    $('.postMediaName').val(mediaId); // $('#addFeatureImage').append('<label>' + alt + ' has been selected</label>');
-
+    $('.postMediaName').val(mediaId);
     $("#addFeatureImage").append($('<img>', {
       src: src,
       width: 175,

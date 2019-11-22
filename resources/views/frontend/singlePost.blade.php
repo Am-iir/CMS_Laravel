@@ -2,7 +2,7 @@
 @section('content')
     @forelse($post->media as $media)
         <header class="masthead"
-                style="background-image: url( {{asset('/storage/cover_images/'.$media->cover_image)}}) ">
+                style="background-image: url( {{asset('/storage/cover_images/large/'.$media->cover_image)}}) ">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row">

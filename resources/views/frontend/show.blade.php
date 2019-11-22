@@ -54,7 +54,6 @@
                         {{ $category->name }}
                     @empty
                         No Categories
-
                     @endforelse
                 </small>
             </div>

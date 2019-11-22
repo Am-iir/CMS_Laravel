@@ -21,80 +21,70 @@
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
 
+
                 @forelse($posts as $post)
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="post-title">
-                                <a href="{{route('front.show' , $post->slug)}}">
-                                    {{$post->title}}
-                                </a>
-                            </h3>
-                            <small>Posted by
-                                {{$post->user->name}}
-                                on {{$post->created_at->toFormattedDateString()}}</small>
+
+                    <div class="post-preview">
+                        <a href="{{route('front.show' , $post->slug)}}">
+                            <h2 class="post-title">
+                                {{$post->title}}
+                            </h2>
+                        </a>
+                        <p class="post-meta">Posted by
+                            {{$post->user->name}}
+                            on {{$post->created_at->toFormattedDateString()}}</p>
+                        <div class="row">
+
+
+                            <div class="col-sm-2 mt-3">
+                                @forelse($post->media as $media)
+                                    <img src="{{asset('/storage/cover_images/thumbnail/'.$media->cover_image)}}"
+                                         alt="{{ $media->alt }}">
+
+                                @empty
+                                    <small> No Image </small>
+                                @endforelse
+                            </div>
+                            <div class="col-sm-10 ">
+                                {!! \Illuminate\Support\Str::words(strip_tags($post->description), 25,'  ......')  !!}
+
+                            </div>
                         </div>
 
-                        <div class="card-body pt-0">
-                            <div class="row">
-                                <div class="col-sm-2 mt-3">
-                                    @forelse($post->media as $media)
-                                        <img src="{{asset('/storage/cover_images/thumbnail/'.$media->cover_image)}}"
-                                             alt="{{ $media->alt }}">
-
+                        <div class="row">
+                            <div class="col-sm-3  ">
+                                <small>
+                                    <i class="fas fa-tags"></i>
+                                    @forelse($post->tags as $tag)
+                                        {{ $tag->name }}
                                     @empty
-                                        <small> No Image </small>
+                                        No Tags
+
                                     @endforelse
-                                </div>
-                                <div class="col-sm-10 ">
-                                    {!! \Illuminate\Support\Str::words(strip_tags($post->description), 25,'  ......')  !!}
-
-                                </div>
+                                </small>
                             </div>
-                            <div class="row">
-                                <div class="col-sm-3 ">
-                                    <small>
-                                        <i class="fas fa-tags"></i>
-                                        @forelse($post->tags as $tag)
-                                            {{ $tag->name }}
-                                        @empty
-                                            No Tags
+                            <div class="col-sm-5 ">
+                                <small>
 
-                                        @endforelse
-                                    </small>
-                                </div>
-                                <div class="col-sm-5 ">
-                                    <small>
+                                    <i class="fas fa-wrench"></i>
 
-                                        <i class="fas fa-wrench"></i>
+                                    @forelse($post->categories as $category)
+                                        {{ $category->name }}
+                                    @empty
+                                        No Categories
 
-                                        @forelse($post->categories as $category)
-                                            {{ $category->name }}
-                                        @empty
-                                            No Categories
-
-                                        @endforelse
-                                    </small>
-                                </div>
-
-                                <div class="col-sm-2 offset-1">
-                                    <a href="{{route('front.show' , $post->slug)}}" class="btn-sm  btn-secondary p-2">View
-                                        Post.. </a>
-
-                                </div>
-
+                                    @endforelse
+                                </small>
                             </div>
                         </div>
+
+
                     </div>
-                    <br>
-
+                    <hr>
                 @empty
+                    <div class="post-preview">
+                        No Posts Available
 
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="post-title">
-                                No Posts Available
-                            </h3>
-                        </div>
                     </div>
                 @endforelse
 

@@ -34,38 +34,4 @@ class PageController extends Controller
             ]);
         return redirect()->route('admin');
     }
-
-    public function show($slug)
-    {
-        $page = Page::query()->where('slug', $slug)->first();
-
-        abort_if(!$page ? true : false, 404);
-
-        $slug = $page->slug;
-
-        return view('frontend.' . $slug, compact('page'));
-
-    }
-
-    public function sendMessage(Request $request)
-    {
-//        dd($request->all());
-
-        $validate = Validator:: make($request->all(),[
-            'name' => 'required',
-            'email'=>'required',
-            'content' => 'required'
-
-        ]);
-
-        if ($validate->fails()){
-            return response()->json(['error'=> $validate->errors()],422);
-        }
-
-        $data = $request->all();
-
-//        SendEmailJob::dispatch($data);
-        Mail::queue(new Contact($data));
-        return response()->json();
-    }
 }

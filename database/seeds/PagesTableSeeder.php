@@ -12,15 +12,14 @@ class PagesTableSeeder extends Seeder
     public function run()
     {
         DB::table('pages')->insert(
-
-
-            ['title' => 'About',
-                'slug' => 'about',
-            ],
             [
-                'title' => 'Contact',
-                'slug' => 'contact',
-
+                ['title' => 'About',
+                    'slug' => 'about',
+                ],
+                [
+                    'title' => 'Contact',
+                    'slug' => 'contact',
+                ]
             ]
         );
 
