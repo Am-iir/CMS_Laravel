@@ -37061,9 +37061,10 @@ $(document).ready(function () {
       'email': $('#email').val(),
       'content': $('#content').val()
     };
-    $('.contact_form').find('.is-invalid').removeClass('is-invalid');
-    $('.contact_form').find('.error').html('');
-    $('.contact_form').find('.success').html('').removeClass('alert alert-success alert-block');
+    var form = $('.contact_form');
+    form.find('.is-invalid').removeClass('is-invalid');
+    form.find('.error').html('');
+    form.find('.success').html('').removeClass('alert alert-success alert-block');
     $.ajaxSetup({
       headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -37079,8 +37080,8 @@ $(document).ready(function () {
         });
       },
       success: function success(msg) {
-        $(".success").html('Message has been sent').addClass('alert alert-success alert-block');
-        $(".success").append('<button type="button" class="close" data-dismiss="alert">×</button>'); // let array = ['name','email','content'];
+        $('.contact_form').prepend('<div class="alert alert-success alert-block success">Message has been sent <button type="button" class="close" data-dismiss="alert">×</button></div>'); // $(".success").html('Message has been sent').addClass('alert alert-success alert-block');
+        // let array = ['name','email','content'];
         //
         // $.each(array, function( index, value ) {
         //     console.log(value);
