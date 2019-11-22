@@ -37069,10 +37069,14 @@ $(document).ready(function () {
     $.ajax({
       method: "POST",
       url: "/contact/sendMessage",
+      data: formData,
       error: function error(data) {
         $.each(data.responseJSON.error, function (key, value) {
           $('#' + key).addClass('is-invalid').siblings('.error').html(value).addClass('invalid-feedback');
         });
+      },
+      success: function success() {
+        $(".success").html('Message has been sent').addClass('alert alert-success alert-block');
       }
     });
   });

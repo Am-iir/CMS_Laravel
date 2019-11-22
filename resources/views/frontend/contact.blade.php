@@ -21,6 +21,7 @@
                 <div class="contact_form">
 
                 <form name="sentMessage" id="contactForm" method="POST" action="/contact/sendMessage">
+                    <div class="success"></div>
                     {{csrf_field()}}
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">

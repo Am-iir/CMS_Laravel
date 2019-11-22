@@ -214,6 +214,8 @@ $(document).ready(function () {
         $.ajax({
             method: "POST",
             url: "/contact/sendMessage",
+            data: formData,
+
             error: function (data) {
 
                 $.each(data.responseJSON.error, function (key, value) {
@@ -224,6 +226,10 @@ $(document).ready(function () {
 
 
                 })
+            },
+            success: function () {
+                $(".success").html('Message has been sent').addClass('alert alert-success alert-block');
+
             },
         });
 

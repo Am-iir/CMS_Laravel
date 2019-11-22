@@ -49,11 +49,12 @@ class PageController extends Controller
 
     public function sendMessage(Request $request)
     {
+//        dd($request->all());
 
         $validate = Validator:: make($request->all(),[
             'name' => 'required',
-            'content' => 'required',
             'email'=>'required',
+            'content' => 'required'
 
         ]);
 
