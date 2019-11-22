@@ -227,9 +227,16 @@ $(document).ready(function () {
 
                 })
             },
-            success: function () {
+            success: function (msg) {
                 $(".success").html('Message has been sent').addClass('alert alert-success alert-block');
+                let array = ['name','email','content'];
 
+                $.each(array, function( index, value ) {
+                    console.log(value);
+                    $('#'+value).each(function(){
+                        $(this).removeClass('is-invalid');
+                    });
+                });
             },
         });
 

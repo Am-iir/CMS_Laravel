@@ -37075,8 +37075,15 @@ $(document).ready(function () {
           $('#' + key).addClass('is-invalid').siblings('.error').html(value).addClass('invalid-feedback');
         });
       },
-      success: function success() {
+      success: function success(msg) {
         $(".success").html('Message has been sent').addClass('alert alert-success alert-block');
+        var array = ['name', 'email', 'content'];
+        $.each(array, function (index, value) {
+          console.log(value);
+          $('#' + value).each(function () {
+            $(this).removeClass('is-invalid');
+          });
+        });
       }
     });
   });

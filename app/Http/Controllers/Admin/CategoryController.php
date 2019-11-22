@@ -74,7 +74,8 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        $posts=$category->posts;
+        return view('admin.category.show',compact('posts'));
     }
 
     /**
