@@ -205,6 +205,11 @@ $(document).ready(function () {
 
         };
 
+        $('.contact_form').find('.is-invalid').removeClass('is-invalid');
+        $('.contact_form').find('.error').html('');
+        $('.contact_form').find('.success').html('').removeClass('alert alert-success alert-block');
+
+
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -229,20 +234,19 @@ $(document).ready(function () {
             },
             success: function (msg) {
                 $(".success").html('Message has been sent').addClass('alert alert-success alert-block');
-                let array = ['name','email','content'];
+                $(".success").append('<button type="button" class="close" data-dismiss="alert">×</button>');
 
-                $.each(array, function( index, value ) {
-                    console.log(value);
-                    $('#'+value).each(function(){
-                        $(this).removeClass('is-invalid');
-                    });
-                });
+                // let array = ['name','email','content'];
+                //
+                // $.each(array, function( index, value ) {
+                //     console.log(value);
+                //     $('#'+value).each(function(){
+                //         $(this).removeClass('is-invalid');
+                //     });
+                // });
             },
         });
-
-
     });
-
 });
 
 

@@ -64,8 +64,8 @@ class PageController extends Controller
 
         $data = $request->all();
 
-        SendEmailJob::dispatch($data);
-//        Mail::queue(new Contact($data));
+//        SendEmailJob::dispatch($data);
+        Mail::queue(new Contact($data));
         return response()->json();
     }
 }
