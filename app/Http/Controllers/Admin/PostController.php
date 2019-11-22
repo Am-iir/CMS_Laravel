@@ -112,7 +112,7 @@ class PostController extends Controller
         $post->tags()->sync(request('tag_id'));
         $post->categories()->sync(request('category_id'));
 
-        return redirect()->route('admin.posts.index');
+        return redirect()->route('admin.posts.index')->with('success','Edited successfully!');
 
     }
 
