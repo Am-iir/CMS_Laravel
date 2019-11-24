@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 
@@ -45,6 +46,22 @@ class Post extends Model
         return 'slug';
 
 
+    }
+
+    public function scopeRecentPosts(Builder $query)
+    {
+
+        return $query->orderBy('created_at', 'desc')
+            ->with(['user', 'tags', 'media', 'categories'])
+            ->paginate(3);
+    }
+
+    public function scopeFeaturePosts(Builder $query){
+        return $query->orderBy('created_at', 'desc')
+            ->where('featured',1)
+            ->with(['user', 'tags', 'media', 'categories'])
+            ->get()
+            ->take(5);
     }
 
 }

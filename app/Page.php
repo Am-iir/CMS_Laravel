@@ -18,7 +18,9 @@ class Page extends Model
         $rules = [
             'about' => [
                 'title' => 'required',
-                'description' => 'required'
+                'description' => 'required',
+                'sectionTwo' => 'required',
+                'sectionThree' => 'required'
             ],
             'contact' => [
                 'title' => 'required',

@@ -21,8 +21,6 @@ use Illuminate\Http\Request;
 Auth::routes();
 
 
-Route::get('/','PostsController@index');
-Route::get('/posts/{post}','PostsController@show')->name('front.show');
 
 Route::middleware('auth')
     ->namespace('Admin')
@@ -51,8 +49,11 @@ Route::middleware('auth')
             });
     });
 
-Route::get('/{page}','FrontendController@show');
-Route::post('/contact/sendMessage','FrontendController@sendMessage');
+
+Route::get('/','PostsController@index');
+Route::get('/posts/{post}','PostsController@show')->name('front.show');
+Route::get('/{page}','PostsController@page');
+Route::post('/contact/sendMessage','PostsController@sendMessage');
 
 
 

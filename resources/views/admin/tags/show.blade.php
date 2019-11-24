@@ -12,7 +12,7 @@
                 </h2>
                 <p >
                     {{$post->created_at->toFormattedDateString()}}</p>
-                {{$post->description}}
+                {!! $post->description !!}
             @endforeach
 
     </div>

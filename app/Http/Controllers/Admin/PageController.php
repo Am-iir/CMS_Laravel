@@ -23,10 +23,22 @@ class PageController extends Controller
     {
         $this->validate($request, Page::rules($page->slug));
 
-        $array = [
-            'title' => request('title'),
-            'description' => request('description')
-        ];
+        if ($page->slug == 'about'){
+
+            $array = [
+                'title' => request('title'),
+                'description' => request('description'),
+                'sectionTwo' =>request('sectionTwo'),
+                'sectionThree'=>request('sectionThree')
+            ];
+        }
+        else{
+            $array = [
+                'title' => request('title'),
+                'description' => request('description')
+            ];
+        }
+
         $page->update(
             [
                 'title' => request('title'),
