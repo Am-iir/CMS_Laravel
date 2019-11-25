@@ -2,193 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b426e174-d8ab-4e1e-b1b4-f6487596f394" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_11_24_081335_add_column_featured_to_posts.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/about.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/category.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/contact.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/css/aos.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/css/bootstrap-datepicker.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/css/bootstrap/bootstrap-grid.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/css/bootstrap/bootstrap-reboot.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/css/bootstrap/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/css/bootstrap/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/css/jquery-ui.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/css/magnific-popup.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/css/mediaelementplayer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/css/owl.carousel.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/css/owl.theme.default.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/fonts/flaticon/backup.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/fonts/flaticon/font/Flaticon.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/fonts/flaticon/font/Flaticon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/fonts/flaticon/font/Flaticon.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/fonts/flaticon/font/Flaticon.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/fonts/flaticon/font/Flaticon.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/fonts/flaticon/font/_flaticon.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/fonts/flaticon/font/_flaticon.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/fonts/flaticon/font/flaticon.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/fonts/flaticon/font/flaticon.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/fonts/flaticon/license/license.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/fonts/icomoon/Read Me.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/fonts/icomoon/demo-files/demo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/fonts/icomoon/demo-files/demo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/fonts/icomoon/demo.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/fonts/icomoon/fonts/icomoon.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/fonts/icomoon/fonts/icomoon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/fonts/icomoon/fonts/icomoon.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/fonts/icomoon/fonts/icomoon.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/fonts/icomoon/selection.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/fonts/icomoon/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/images/cebupacific-booking.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/images/hero_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/images/img_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/images/img_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/images/img_3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/images/img_4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/images/img_v_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/images/img_v_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/images/person_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/images/person_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/images/person_3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/images/person_4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/images/person_5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/js/aos.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/js/bootstrap-datepicker.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/js/jquery-3.3.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/js/jquery-migrate-3.0.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/js/jquery-ui.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/js/jquery.countdown.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/js/jquery.magnific-popup.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/js/jquery.stellar.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/js/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/js/mediaelement-and-player.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/js/owl.carousel.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/js/popper.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/js/slick.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/prepros-6.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/_site-base.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/_site-blocks.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/_site-navbar.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/_alert.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/_badge.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/_breadcrumb.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/_button-group.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/_buttons.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/_card.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/_carousel.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/_close.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/_code.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/_custom-forms.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/_dropdown.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/_forms.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/_functions.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/_grid.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/_images.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/_input-group.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/_jumbotron.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/_list-group.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/_media.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/_modal.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/_nav.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/_navbar.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/_pagination.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/_popover.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/_print.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/_progress.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/_reboot.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/_root.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/_tables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/_tooltip.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/_transitions.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/_type.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/_utilities.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/bootstrap-grid.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/bootstrap-reboot.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/bootstrap.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/mixins/_alert.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/mixins/_background-variant.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/mixins/_badge.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/mixins/_border-radius.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/mixins/_box-shadow.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/mixins/_breakpoints.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/mixins/_buttons.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/mixins/_caret.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/mixins/_clearfix.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/mixins/_float.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/mixins/_forms.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/mixins/_gradients.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/mixins/_grid-framework.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/mixins/_grid.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/mixins/_hover.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/mixins/_image.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/mixins/_list-group.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/mixins/_lists.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/mixins/_nav-divider.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/mixins/_pagination.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/mixins/_reset-text.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/mixins/_resize.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/mixins/_screen-reader.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/mixins/_size.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/mixins/_table-row.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/mixins/_text-emphasis.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/mixins/_text-hide.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/mixins/_text-truncate.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/mixins/_transition.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/mixins/_visibility.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/utilities/_align.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/utilities/_background.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/utilities/_borders.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/utilities/_clearfix.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/utilities/_display.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/utilities/_embed.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/utilities/_flex.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/utilities/_float.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/utilities/_position.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/utilities/_screenreaders.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/utilities/_shadows.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/utilities/_sizing.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/utilities/_spacing.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/utilities/_text.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/bootstrap/utilities/_visibility.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/scss/style.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/front/single.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/front/about.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/front/about/_partials/coverimage.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/front/about/_partials/sectionOne.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/front/about/_partials/sectionThree.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/front/about/_partials/sectionTwo.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/front/contact.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/front/contact/_partials/content.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/front/contact/_partials/coverImage.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/front/home.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/front/home/_partials/bottom.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/front/home/_partials/feature.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/front/home/_partials/recent.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/front/posts/single.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/_front/footer.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/_front/nav.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/_front/subscribe.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/front.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_11_24_124820_add_column_position_to_posts.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_11_24_145953_add_column_profile_image_to_users.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/no-image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/profile/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Page.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProfileController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/images.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/images.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/media/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/media/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/posts/addmedia.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/posts/addmedia.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/posts/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/posts/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/tags/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/tags/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/myjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/myjs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/posts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/posts/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/home/_partials/feature.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/home/_partials/feature.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/_partials/topbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/_partials/topbar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -345,24 +171,24 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="jsx.switch.disabled" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/theme/front" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/img" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\UniServerZ\vhosts\CMS_Laravel\public\img" />
+      <recent name="E:\UniServerZ\vhosts\CMS_Laravel\public\theme\front" />
+      <recent name="E:\UniServerZ\vhosts\CMS_Laravel\resources\views\layouts\_front" />
+      <recent name="E:\UniServerZ\vhosts\CMS_Laravel\resources\views" />
+      <recent name="E:\UniServerZ\vhosts\CMS_Laravel\resources\js" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\UniServerZ\vhosts\CMS_Laravel\app\Http\Controllers\Admin" />
       <recent name="E:\UniServerZ\vhosts\CMS_Laravel\resources\views\admin" />
       <recent name="E:\UniServerZ\vhosts\CMS_Laravel\resources\views" />
       <recent name="E:\UniServerZ\vhosts\CMS_Laravel\resources\views\frontend" />
       <recent name="E:\UniServerZ\vhosts\CMS_Laravel\resources\sass" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\UniServerZ\vhosts\CMS_Laravel\public\theme\front" />
-      <recent name="E:\UniServerZ\vhosts\CMS_Laravel\resources\views\layouts\_front" />
-      <recent name="E:\UniServerZ\vhosts\CMS_Laravel\resources\views" />
-      <recent name="E:\UniServerZ\vhosts\CMS_Laravel\public\img" />
-      <recent name="E:\UniServerZ\vhosts\CMS_Laravel\resources\js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -619,7 +445,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574415913192</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Managed the front section with recent and featured">
+      <created>1574598380430</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1574598380430</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -642,7 +475,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Media operations with ajax completed" />
     <MESSAGE value="Media and post relation created" />
     <MESSAGE value="Laravel Intervention for thumbnail done" />
     <MESSAGE value="js issue solved" />
@@ -667,6 +499,7 @@
     <MESSAGE value="Bootstrap cross added" />
     <MESSAGE value="Edit problem fixed" />
     <MESSAGE value="Seeding and  Route issues fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Seeding and  Route issues fixed" />
+    <MESSAGE value="Managed the front section with recent and featured" />
+    <option name="LAST_COMMIT_MESSAGE" value="Managed the front section with recent and featured" />
   </component>
 </project>

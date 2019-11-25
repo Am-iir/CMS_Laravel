@@ -10,7 +10,7 @@
 
                         @foreach($featurePost->media as $media)
 
-                            <a href="#" class="h-entry img-5 h-100 gradient"
+                            <a href="{{route('front.show' , $featurePost->slug)}}" class="h-entry img-5 h-100 gradient"
                                style="background-image: url('{{asset('/storage/cover_images/large/'.$media->cover_image)}}');">
 
                                 <div class="text">
@@ -27,10 +27,11 @@
                     </div>
 
                 @else
+
                     @if ($loop->iteration == 1 ||  $loop->iteration == 4)
                         <div class="col-md-4">
                             @foreach($featurePost->media as $media)
-                                <a href="#" class="h-entry mb-30 v-height gradient"
+                                <a href="{{route('front.show' , $featurePost->slug)}}" class="h-entry mb-30 v-height gradient"
                                    style="background-image: url('{{asset('/storage/cover_images/large/'.$media->cover_image)}}');">
                                     <div class="text">
                                         <h2>{{$featurePost->title}}</h2>
@@ -41,7 +42,7 @@
                             @else
                                 @foreach($featurePost->media as $media)
 
-                                    <a href="#" class="h-entry v-height gradient"
+                                    <a href="{{route('front.show' , $featurePost->slug)}}" class="h-entry v-height gradient"
                                        style="background-image: url('{{asset('/storage/cover_images/large/'.$media->cover_image)}}');">
 
                                         <div class="text">

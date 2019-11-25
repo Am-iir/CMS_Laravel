@@ -41,6 +41,8 @@ Route::middleware('auth')
                 Route::post('/media/{medium}','MediaController@update')->name('media.update');
                 Route::get('/pages/{page}/edit','PageController@edit')->name('pages.edit');
                 Route::post('/pages/{page}','PageController@update')->name('pages.update');
+                Route::get('/profile/{user}/edit','ProfileController@edit')->name('profile.edit');
+                Route::post('/profile/{user}','ProfileController@update')->name('profile.update');
 
                 Route::middleware('admin')
                     ->group(function(){

@@ -57,7 +57,7 @@ class Post extends Model
     }
 
     public function scopeFeaturePosts(Builder $query){
-        return $query->orderBy('created_at', 'desc')
+        return $query->orderBy('position')
             ->where('featured',1)
             ->with(['user', 'tags', 'media', 'categories'])
             ->get()
