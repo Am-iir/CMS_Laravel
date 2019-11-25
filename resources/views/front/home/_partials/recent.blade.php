@@ -11,8 +11,8 @@
                     <div class="entry2">
                         @foreach($recentPost->media as $media)
                             <a href="{{route('front.show' , $recentPost->slug)}}">
-                            <img src="{{asset('/storage/cover_images/large/'.$media->cover_image)}}"
-                                 alt="{{ $media->alt }}" class="img-fluid rounded">
+                                <img src="{{asset('/storage/cover_images/large/'.$media->cover_image)}}"
+                                     alt="{{ $media->alt }}" class="img-fluid rounded">
                             </a>
 
                         @endforeach
@@ -42,14 +42,9 @@
             @endforeach
         </div>
 
-        <!-- pagination -->
-        <div class="row text-center pt-5 border-top">
-            <div class="col-md-12 offset-5">
-                    {{ $recentPosts->links('vendor.pagination.bootstrap-4') }}
+    {{$recentPosts->links()}}
 
-            </div>
-        </div>
 
-        <!-- End pagination -->
+    <!-- End pagination -->
     </div>
 </div>
