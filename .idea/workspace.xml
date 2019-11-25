@@ -1,21 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b426e174-d8ab-4e1e-b1b4-f6487596f394" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_11_24_124820_add_column_position_to_posts.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_11_24_145953_add_column_profile_image_to_users.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/no-image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/profile/edit.blade.php" afterDir="false" />
+    <list default="true" id="b426e174-d8ab-4e1e-b1b4-f6487596f394" name="Default Changelist" comment="Updating Profile Completed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProfileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProfileController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/myjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/myjs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/posts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/posts/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/home/_partials/feature.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/home/_partials/feature.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/_partials/topbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/_partials/topbar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_24_124820_add_column_position_to_posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_24_124820_add_column_position_to_posts.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -452,7 +442,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574598380430</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Updating Profile Completed">
+      <created>1574648750421</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1574648750422</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -475,7 +472,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Media and post relation created" />
     <MESSAGE value="Laravel Intervention for thumbnail done" />
     <MESSAGE value="js issue solved" />
     <MESSAGE value="Laravel Intervention for multiple sizes done" />
@@ -500,6 +496,7 @@
     <MESSAGE value="Edit problem fixed" />
     <MESSAGE value="Seeding and  Route issues fixed" />
     <MESSAGE value="Managed the front section with recent and featured" />
-    <option name="LAST_COMMIT_MESSAGE" value="Managed the front section with recent and featured" />
+    <MESSAGE value="Updating Profile Completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updating Profile Completed" />
   </component>
 </project>
