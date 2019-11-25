@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" href="{{asset('theme/front/fonts/icomoon/style.css')}}">
     <link rel="stylesheet" href="{{asset('theme/front/css/bootstrap.min.css')}}">
+
     <link rel="stylesheet" href="{{asset('theme/front/css/magnific-popup.css')}}">
     <link rel="stylesheet" href="{{asset('theme/front/css/jquery-ui.css')}}">
     <link rel="stylesheet" href="{{asset('theme/front/css/owl.carousel.min.css')}}">
