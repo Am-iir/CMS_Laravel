@@ -15,7 +15,8 @@
                         <h1 class="mb-4"><a href="#">{{$post->title}}</a></h1>
                         <div class="post-meta align-items-center text-center">
                             <figure class="author-figure mb-0 mr-3 d-inline-block">
-                                <img src="/theme/front/images/person_1.jpg" alt="Image" class="img-fluid">
+
+                                <img src="{{asset('/storage/profile_images/'.$post->user->profile_image)}}" alt="Image" class="img-fluid">
                             </figure>
                             <span class="d-inline-block mt-1">By {{$post->user->name}}</span>
                             <span>&nbsp;-&nbsp; {{$post->created_at->toFormattedDateString()}}</span>
@@ -73,9 +74,9 @@
                     <!-- END sidebar-box -->
                     <div class="sidebar-box">
                         <div class="bio text-center">
-                            <img src="/theme/front/images/person_2.jpg" alt="Image Placeholder" class="img-fluid mb-5">
+                            <img src="{{asset('/storage/profile_images/'.$post->user->profile_image)}}" alt="Image Placeholder" class="img-fluid mb-5">
                             <div class="bio-body">
-                                <h2>Craig David</h2>
+                                <h2>{{$post->user->name}}</h2>
                                 <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem
                                     facilis sunt repellendus excepturi beatae porro debitis voluptate nulla quo veniam
                                     fuga sit molestias minus.</p>

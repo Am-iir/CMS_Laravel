@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b426e174-d8ab-4e1e-b1b4-f6487596f394" name="Default Changelist" comment="Updating Profile Completed">
+    <list default="true" id="b426e174-d8ab-4e1e-b1b4-f6487596f394" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/vendor/pagination/bootstrap-4.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/vendor/pagination/default.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/vendor/pagination/semantic-ui.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/vendor/pagination/simple-bootstrap-4.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/vendor/pagination/simple-default.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProfileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_24_124820_add_column_position_to_posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_24_124820_add_column_position_to_posts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/home/_partials/recent.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/home/_partials/recent.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/posts/single.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/posts/single.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -449,7 +454,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574648750422</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Validation fixes">
+      <created>1574658052381</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1574658052381</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -472,7 +484,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Laravel Intervention for thumbnail done" />
     <MESSAGE value="js issue solved" />
     <MESSAGE value="Laravel Intervention for multiple sizes done" />
     <MESSAGE value="Slugable for Category done" />
@@ -497,6 +508,7 @@
     <MESSAGE value="Seeding and  Route issues fixed" />
     <MESSAGE value="Managed the front section with recent and featured" />
     <MESSAGE value="Updating Profile Completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating Profile Completed" />
+    <MESSAGE value="Validation fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Validation fixes" />
   </component>
 </project>

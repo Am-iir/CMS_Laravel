@@ -29,7 +29,8 @@ class ProfileController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users,email,' . auth()->id(),
             'password' => 'min:6|confirmed|nullable',
-            'profile_image' => 'image|max:1999'
+            'profile_image' => 'image|max:1999',
+            'password_confirmation' => 'required_with:password'
 
         ]);
 

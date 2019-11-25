@@ -10,8 +10,10 @@
                 <div class="col-lg-4 mb-4">
                     <div class="entry2">
                         @foreach($recentPost->media as $media)
+                            <a href="{{route('front.show' , $recentPost->slug)}}">
                             <img src="{{asset('/storage/cover_images/large/'.$media->cover_image)}}"
                                  alt="{{ $media->alt }}" class="img-fluid rounded">
+                            </a>
 
                         @endforeach
 
@@ -23,9 +25,10 @@
                             <h2><a href="{{route('front.show' , $recentPost->slug)}}">{{$recentPost->title}}</a></h2>
                             <div class="post-meta align-items-center text-left clearfix">
                                 <figure class="author-figure mb-0 mr-3 float-left">
-                                    <img src="{{asset('theme/front/images/person_1.jpg')}}"
+                                    <img src="{{asset('/storage/profile_images/'.$recentPost->user->profile_image)}}"
                                          alt="{{$recentPost->user->name}}"
                                          class="img-fluid">
+
                                 </figure>
                                 <span class="d-inline-block mt-1">By <a
                                             href="#">{{$recentPost->user->name}}</a></span>
