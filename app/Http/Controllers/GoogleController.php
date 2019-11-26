@@ -13,7 +13,6 @@ class GoogleController extends Controller
 {
     public function login()
     {
-
         $client = (new Social)->createClient();
         return redirect($client->createAuthUrl());
     }
