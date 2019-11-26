@@ -42,6 +42,7 @@
             @endforeach
         </div>
 
+
     {{$recentPosts->links()}}
 
 

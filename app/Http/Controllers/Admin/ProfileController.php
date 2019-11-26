@@ -37,8 +37,10 @@ class ProfileController extends Controller
 
         $user->name = request('name');
         $user->email = request('email');
-        $user->password = Hash::make(request('password'));
 
+        if ($request->input('password')){
+            $user->password = Hash::make(request('password'));
+        }
 
         if ($request->hasFile('profile_image')) {
 

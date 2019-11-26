@@ -58,5 +58,9 @@ Route::get('/{page}','PostsController@page');
 Route::post('/contact/sendMessage','PostsController@sendMessage');
 
 
+Route::get('/google/login','GoogleController@login')->name('google.login');
+Route::get('google/callback','GoogleController@redirect');
+
+?>
 
 
