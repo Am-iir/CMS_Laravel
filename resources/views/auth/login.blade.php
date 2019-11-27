@@ -79,6 +79,14 @@
                                     </a>
                                 </div>
                             </div>
+                            <div class="form-group row ">
+                                <div class="col-md-8 offset-md-4">
+                                    <a href="{{route('facebook.login')}}" class="btn btn-primary"
+                                       title="View Post">
+                                        <i class="fab fa-facebook"></i> Login With Facebook
+                                    </a>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>

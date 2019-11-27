@@ -57,10 +57,16 @@ Route::get('/posts/{post}','PostsController@show')->name('front.show');
 Route::get('/{page}','PostsController@page');
 Route::post('/contact/sendMessage','PostsController@sendMessage');
 
-
 Route::get('/google/login','GoogleController@login')->name('google.login');
-Route::get('google/callback','GoogleController@redirect');
+Route::get('/google/callback','GoogleController@redirect');
 
-?>
+Route::get('/facebook/login','FacebookController@login')->name('facebook.login');
+Route::get('/facebook/callback','FacebookController@redirect');
+
+
+Route::get('/social/{type}','SocialController@login')->name('facebook.login');
+Route::get('/social/{type}/callback','SocialController@redirect');
+
+
 
 

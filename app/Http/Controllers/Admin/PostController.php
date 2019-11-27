@@ -8,6 +8,7 @@ use App\Post;
 use App\Tag;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -24,7 +25,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy('created_at','desc')->paginate(5);
+        $posts = Post::where('user_id' , '=', Auth::id())
+        ->orderBy('created_at','desc')
+            ->paginate(5);
         return view('admin.posts.index', compact('posts'));
     }
 

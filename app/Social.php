@@ -2,6 +2,8 @@
 
 namespace App;
 
+use Facebook\Exceptions\FacebookSDKException;
+use Facebook\Facebook;
 use Google_Client;
 use Illuminate\Database\Eloquent\Model;
 
@@ -22,6 +24,26 @@ class Social extends Model
         $client->addScope("profile");
 
         return $client;
+
+    }
+
+    public function Facebookhelper(){
+
+        try {
+            $fb = new Facebook([
+                'app_id' => config('services.facebook.client_id'),
+                'app_secret' => config('services.facebook.client_secret'),
+                'default_graph_version' => 'v2.10',
+            ]);
+
+            $helper = $fb->getRedirectLoginHelper();
+            return $helper;
+        } catch (FacebookSDKException $e) {
+            echo 'Facebook SDK returned an error: ' . $e->getMessage();
+            exit;
+        }
+
+
 
     }
 }
