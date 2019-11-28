@@ -73,7 +73,7 @@
                             </div>
                             <div class="form-group row mt-1">
                                 <div class="col-md-8 offset-md-4">
-                                    <a href="{{route('google.login')}}" class="btn btn-danger"
+                                    <a href="{{route('social.login', 'google')}}" class="btn btn-danger"
                                        title="View Post">
                                         <i class="fab fa-google"></i> Login With Google
                                     </a>
@@ -81,7 +81,7 @@
                             </div>
                             <div class="form-group row ">
                                 <div class="col-md-8 offset-md-4">
-                                    <a href="{{route('facebook.login')}}" class="btn btn-primary"
+                                    <a href="{{route('social.login' ,'facebook')}}" class="btn btn-primary"
                                        title="View Post">
                                         <i class="fab fa-facebook"></i> Login With Facebook
                                     </a>

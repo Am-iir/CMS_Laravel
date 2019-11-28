@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddColumnPositionToPosts extends Migration
+class CreateTableSocial extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class AddColumnPositionToPosts extends Migration
      */
     public function up()
     {
-        Schema::table('posts', function (Blueprint $table) {
-            $table->unsignedInteger('position')->nullable();
+        Schema::create('socials', function (Blueprint $table) {
+            $table->increments('id');
+            $table->unsignedInteger('user_id');
+            $table->string('social_id');
+            $table->string('type');
+            $table->timestamps();
         });
     }
 
@@ -25,9 +29,6 @@ class AddColumnPositionToPosts extends Migration
      */
     public function down()
     {
-        Schema::table('posts', function (Blueprint $table) {
-            $table->dropColumn('position');
-
-        });
+        Schema::dropIfExists('socials');
     }
 }
